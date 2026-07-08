@@ -2,7 +2,7 @@
   "id": "official/comfyui-image-generation",
   "name": "comfyui-image-generation",
   "display_name": "ComfyUI 文生图",
-  "description": "调用 ComfyUI 工作流生成图片并下载。当用户请求文生图、生成图片、出图时触发。",
+  "description": "通过公网网关调用 ComfyUI 工作流生成图片并下载。当用户请求文生图、生成图片、出图时触发。",
   "version": "2.0.0",
   "icon": "🎨",
   "category": "image_video",
