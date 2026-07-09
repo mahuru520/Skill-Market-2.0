@@ -7,6 +7,7 @@
   "icon": "🔍",
   "category": "system_config",
   "runtime_type": "external_api",
+  "billing": "free",
   "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
   "readme": "SKILL.md",
   "files": [],

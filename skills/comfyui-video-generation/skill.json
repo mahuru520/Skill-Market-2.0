@@ -29,7 +29,7 @@
   "migration": {
     "migrated_from": "http://192.168.1.236:8188",
     "migrated_to": "https://ai.ospreyai.cn",
-    "behavior_change": "视频生成耗时较长（1–2 分钟）叠加外网延迟体感更长；中文文件名需 URL 编码；图片上传与视频提交接口路径变更。",
+    "behavior_change": "图片上传改为 POST /api/v1/upload（带 overwrite=true），提交改为 POST /api/v1/ai/video/generate，任务查询改为按 prompt_id 查 GET /api/v1/ai/tasks/{prompt_id}（原 /history 一次返回全部，网关按任务查）。视频生成耗时 30s–2min，限流 10次/分/IP。已端到端实测通过（上传→提交→轮询→下载 MP4）。",
     "status": "verified"
   },
   "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["skill-install"] },

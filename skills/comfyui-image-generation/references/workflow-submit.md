@@ -3,7 +3,7 @@
 ## 提交接口
 
 ```bash
-curl -s -X POST "http://192.168.1.236:8188/prompt" \
+curl -s -H "Authorization: Bearer $API_KEY" -X POST "$GW/api/v1/ai/image/generate" \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": {

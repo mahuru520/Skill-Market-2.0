@@ -3,7 +3,11 @@
 ## 生成小狗图片
 
 ```bash
-RESPONSE=$(curl -s -X POST "http://192.168.1.236:8188/prompt" \
+export GW="https://ai.ospreyai.cn"
+export API_KEY="sk-your-api-key"
+
+# 1. 提交文生图工作流
+RESPONSE=$(curl -s -H "Authorization: Bearer $API_KEY" -X POST "$GW/api/v1/ai/image/generate" \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": {
@@ -21,6 +25,20 @@ RESPONSE=$(curl -s -X POST "http://192.168.1.236:8188/prompt" \
   }')
 
 echo "$RESPONSE"
-sleep 30
-curl -s "http://192.168.1.236:8188/view?filename=puppy_00001_.png" -o /data/file/小狗.png
+# 从响应中提取 prompt_id
+PROMPT_ID=$(echo "$RESPONSE" | python -c "import sys,json; print(json.load(sys.stdin)['prompt_id'])")
+echo "prompt_id=$PROMPT_ID"
+
+# 2. 轮询任务状态
+while true; do
+  STATUS=$(curl -s -H "Authorization: Bearer $API_KEY" "$GW/api/v1/ai/tasks/$PROMPT_ID")
+  COMPLETED=$(echo "$STATUS" | python -c "import sys,json; d=json.load(sys.stdin); print(d.get('$PROMPT_ID',{}).get('status',{}).get('completed',False))")
+  [ "$COMPLETED" = "True" ] && break
+  sleep 5
+done
+
+# 3. 下载图片（subfolder 为空字符串）
+curl -s -H "Authorization: Bearer $API_KEY" \
+  "$GW/api/v1/ai/image/view/?filename=puppy_00001_.png&type=output&subfolder=" \
+  -o /data/file/小狗.png
 ```

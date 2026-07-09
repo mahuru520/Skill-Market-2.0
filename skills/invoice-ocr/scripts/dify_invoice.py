@@ -1,5 +1,5 @@
 """
-发票识别工作流 - 使用 Dify API
+发票识别工作流 - 使用 Dify API（经公网网关）
 """
 import requests
 import os
@@ -7,17 +7,21 @@ import json
 import csv
 from datetime import datetime
 
-# Dify 配置
-DIFY_BASE_URL = "http://192.168.1.236/v1"
-AUTH_TOKEN = "app-sCfow3LXjbKqFMzJOqI5aTcA"
+# Dify 配置（经公网网关，双 token 鉴权）
+DIFY_BASE_URL = "https://ai.ospreyai.cn"
+API_KEY = "sk-your-api-key"              # 网关 new-api key
+AUTH_TOKEN = "app-sCfow3LXjbKqFMzJOqI5aTcA"  # Dify 应用 API Key
 USER = "invoice-bot"
+
+HEADERS = {
+    "Authorization": f"Bearer {API_KEY}",          # 网关层鉴权
+    "X-Authorization": f"Bearer {AUTH_TOKEN}",     # 后端 Dify 鉴权
+}
 
 
 def upload_file(file_path):
-    """上传文件到 Dify"""
-    url = f'{DIFY_BASE_URL}/files/upload'
-    headers = {'Authorization': f'Bearer {AUTH_TOKEN}'}
-    data = {'user': USER}
+    """上传文件到 Dify（经网关）"""
+    url = f'{DIFY_BASE_URL}/api/v1/ai/workflow/files/upload'
 
     # 根据文件类型设置 mime type
     if file_path.lower().endswith('.pdf'):
@@ -31,10 +35,11 @@ def upload_file(file_path):
 
     file_tuple = (os.path.basename(file_path), open(file_path, "rb"), mime_type)
     files = {"file": file_tuple}
+    data = {'user': USER}
 
     try:
-        response = requests.post(url, headers=headers, data=data, files=files)
-        if response.status_code == 201:
+        response = requests.post(url, headers=HEADERS, data=data, files=files)
+        if response.status_code in (200, 201):
             return response.json()["id"]
         print(f"上传失败: {response.status_code} - {response.text}")
     except Exception as e:
@@ -44,15 +49,14 @@ def upload_file(file_path):
 
 
 def run_workflow(upload_file_id, file_path):
-    """运行 Dify 工作流进行 OCR 处理"""
+    """运行 Dify 工作流进行 OCR 处理（经网关）"""
     # 根据文件类型判断 input type
     if file_path.lower().endswith(('.jpg', '.jpeg', '.png')):
         input_type = "image"
     else:
         input_type = "document"
 
-    url = f"{DIFY_BASE_URL}/workflows/run"
-    headers = {"Authorization": f"Bearer {AUTH_TOKEN}"}
+    url = f"{DIFY_BASE_URL}/api/v1/ai/workflow/workflows/run"
     data = {
         "inputs": {
             "file": {
@@ -69,7 +73,7 @@ def run_workflow(upload_file_id, file_path):
     }
 
     try:
-        response = requests.post(url, headers=headers, json=data, timeout=120)
+        response = requests.post(url, headers=HEADERS, json=data, timeout=120)
         if response.status_code == 200:
             result = response.json()
             if result.get("data", {}).get("status") == "succeeded":
@@ -118,8 +122,8 @@ def run_workflow(upload_file_id, file_path):
                 task_id = result["data"]["task_id"]
                 for _ in range(30):  # 最多等待 60 秒
                     time.sleep(2)
-                    status_url = f"{DIFY_BASE_URL}/workflows/tasks/{task_id}"
-                    status_resp = requests.get(status_url, headers=headers)
+                    status_url = f"{DIFY_BASE_URL}/api/v1/ai/workflow/workflows/tasks/{task_id}"
+                    status_resp = requests.get(status_url, headers=HEADERS)
                     if status_resp.status_code == 200:
                         status_data = status_resp.json()
                         if status_data.get("data", {}).get("status") == "succeeded":

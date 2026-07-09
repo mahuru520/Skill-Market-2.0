@@ -26,6 +26,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
             >
               全部技能
             </NavLink>
+            <a
+              href="https://ai.ospreyai.cn/docs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink-mute hover:text-ink"
+            >
+              文档
+            </a>
+            <a
+              href="https://open.ospreyai.cn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink-mute hover:text-ink"
+            >
+              订阅
+            </a>
           </nav>
         </div>
       </header>

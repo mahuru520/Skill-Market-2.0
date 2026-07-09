@@ -19,8 +19,9 @@
     "base_url": "https://ai.ospreyai.cn",
     "auth_type": "gateway_plus_backend",
     "endpoints": [
-      { "method": "POST", "path": "/api/v1/rag/chats", "desc": "RAG 问答（检索 + 生成）" },
-      { "method": "POST", "path": "/api/v1/embed/embeddings", "desc": "embedding（需纯切片原文时使用）" }
+      { "method": "GET", "path": "/api/v1/rag/datasets", "desc": "列出知识库（获取 dataset_id）" },
+      { "method": "POST", "path": "/api/v1/rag/retrieval", "desc": "检索（返回原文切片，推荐）" },
+      { "method": "POST", "path": "/api/v1/rag/chats", "desc": "检索 + 生成（需唯一 name，answer 可能为空）" }
     ],
     "rate_limit": "10/min/IP burst 5",
     "timeout_sec": 120
@@ -28,7 +29,7 @@
   "migration": {
     "migrated_from": "http://192.168.150.202:1280",
     "migrated_to": "https://ai.ospreyai.cn",
-    "behavior_change": "由纯检索（POST /datasets/{id}/chunks）→ 检索 + 生成（POST /api/v1/rag/chats），行为略变；若下游依赖 chunk 原文需改走 embedding 自建检索。",
+    "behavior_change": "由内网纯检索 POST /api/v1/datasets/{id}/chunks → 网关 POST /api/v1/rag/retrieval（按 dataset_ids 检索，返回原文切片）。chats 接口同步 answer 常为空，建议用 retrieval 自行组织回答。双 token 鉴权（Authorization + X-Authorization）。已端到端实测通过（datasets/retrieval/chats 三接口）。",
     "status": "verified"
   },
   "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["skill-install"] },

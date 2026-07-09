@@ -3,17 +3,23 @@
 ## 上传输入图片
 
 ```bash
-curl -s -X POST "http://192.168.1.236:8188/upload/image" \
+curl -s -H "Authorization: Bearer $API_KEY" -X POST "$GW/api/v1/upload" \
   -F "image=@/data/file/你的图片.png" \
-  -F "type=input"
+  -F "overwrite=true"
 ```
 
-上传成功后返回包含文件名的 JSON，文件名在后续工作流的 `LoadImage` 节点中使用。
+**响应：**
+
+```json
+{"name": "你的图片.png", "subfolder": "", "type": "input"}
+```
+
+上传成功后返回包含文件名的 JSON，文件名（`name` 值）在后续工作流的 `LoadImage` 节点中使用。最大文件大小 50MB，推荐 PNG 格式。
 
 ## 提交视频工作流
 
 ```bash
-curl -s -X POST "http://192.168.1.236:8188/prompt" \
+curl -s -H "Authorization: Bearer $API_KEY" -X POST "$GW/api/v1/ai/video/generate" \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": {

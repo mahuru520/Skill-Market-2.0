@@ -28,6 +28,7 @@ interface RawSkill {
   icon?: string;
   category: string;
   runtime_type: string;
+  billing?: string;
   owner?: { name?: string; type?: string; verified?: boolean };
   readme?: string;
   files?: unknown[];
@@ -127,7 +128,7 @@ export class IndexerService implements OnModuleInit, OnModuleDestroy {
       : "";
 
     const files = this.scanFiles(skillDir);
-    const billing = this.deriveBilling(raw.runtime_type);
+    const billing = this.deriveBilling(raw.runtime_type, raw.billing);
     // 下载数:已存在的技能保留 DB 真实计数(升级版本/skill.json 改动不抹零),
     // 全新技能用 skill.json 的 seed 值。
     const installCount =
@@ -271,7 +272,12 @@ export class IndexerService implements OnModuleInit, OnModuleDestroy {
 
   private deriveBilling(
     runtimeType: string | undefined,
+    explicitBilling?: string,
   ): "free" | "paid" {
+    // skill.json 显式声明 billing 时优先用(用于「外网API 但免费」等例外)
+    if (explicitBilling === "free" || explicitBilling === "paid") {
+      return explicitBilling;
+    }
     if (runtimeType === "gateway_migrated_api" || runtimeType === "external_api")
       return "paid";
     return "free";
