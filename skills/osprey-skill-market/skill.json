@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/osprey-skill-market",
+  "name": "osprey-skill-market",
+  "display_name": "Osprey Skill Market",
+  "description": "通过 Osprey Skill Market 搜索和安装技能。当用户需要查找、安装或浏览技能时使用。无需切换优先源即可直接安装。",
+  "version": "1.0.0",
+  "icon": "🛒",
+  "category": "mail_communication",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-15",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-15T12:56:35.443Z",
+  "updated_at": "2026-07-15T12:56:35.443Z"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/excel-pro",
+  "name": "excel-pro",
+  "display_name": "Excel",
+  "description": "The Spreadsheet Operator. Not a tutorial, but a diagnostic engine. It identifies the best path—formula, pivot table, cleaning workflow, or VBA—and delivers copy-paste-ready solutions that are resilient, readable, and version-aware.",
+  "version": "2.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "2.0.0",
+      "date": "2026-03-11",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-11T01:33:21.371Z",
+  "updated_at": "2026-07-15T12:56:35.410Z"
+}

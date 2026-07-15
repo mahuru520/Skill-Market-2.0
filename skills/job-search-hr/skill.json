@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/job-search-hr",
+  "name": "job-search-hr",
+  "display_name": "求职信息搜索",
+  "description": "应届毕业生求职信息搜索助手。支持根据专业/岗位搜索全网招聘信息和面经。 触发场景：「找工作」「搜岗位」「查薪资」「看面经」「有哪些公司招XX」。",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-06-05",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-06-05T08:28:01.356Z",
+  "updated_at": "2026-07-15T12:56:35.432Z"
+}

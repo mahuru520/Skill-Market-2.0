@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/find-skills",
+  "name": "find-skills",
+  "display_name": "find-skills（场景技能匹配器）",
+  "description": "场景驱动+关键词双模式技能发现工具。当用户用自然语言描述场景/需求（如\"我想做一个海报\"\"帮我分析股票\"），或明确说\"安装技能/find skills/找个skill\"时，自动从官方内置、本地已安装、SkillHub、虾评、GitHub、ClawHub 六层联合搜索并推荐最合适的技能，支持一键安装。已完全替代官方原 find-skills 插件。",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-06-20",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-06-20T05:57:13.901Z",
+  "updated_at": "2026-07-15T12:56:35.418Z"
+}

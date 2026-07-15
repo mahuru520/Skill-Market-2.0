@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/token-optimizer",
+  "name": "token-optimizer",
+  "display_name": "Token Optimizer for OpenClaw",
+  "description": "Reduce OpenClaw AI costs by 97%. Haiku model routing, free Ollama heartbeats, prompt caching, and budget controls. Go from $1,500/month to $50/month in 5 minutes.",
+  "version": "1.0.18",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.18",
+      "date": "2026-02-21",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-02-21T10:53:57.453Z",
+  "updated_at": "2026-07-15T12:56:35.467Z"
+}

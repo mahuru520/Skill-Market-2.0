@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/shugu-book-bone",
+  "name": "shugu-book-bone",
+  "display_name": "书骨 · BookBone",
+  "description": "书骨：将一本书的内容蒸馏为可运行的思维框架Skill。 输入书名，自动完成阅读→框架提取→方法清单→构建验证全流程。 触发词：「蒸馏《XX》」「用《XX》的框架分析」「把这本书做成skill」「书骨」。",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-15",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-15T12:56:35.392Z",
+  "updated_at": "2026-07-15T12:56:35.392Z"
+}

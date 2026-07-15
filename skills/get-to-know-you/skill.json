@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/get-to-know-you",
+  "name": "get-to-know-you",
+  "display_name": "Get To Know You - Dual Core Efficiency Skill",
+  "description": "Dual-core efficiency improvement skill: (1) Actively collect user work background, preference habits through Socratic guided Q&A, automatically sync and update configuration files, zero-threshold to build fully personalized OpenClaw; (2) Standardize negative feedback/skill optimization processing workflow, after receiving requirements, first communicate specific issues clearly, output optimization plan, execute only after user 100% confirms satisfaction, fundamentally eliminate invalid back-and-forth communication, save time and tokens. Trigger scenarios: auto-trigger after installation, user actively initiates information collection, receive any negative feedback, user requests skill optimization.",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "initialization",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-04-02",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-04-02T07:20:17.311Z",
+  "updated_at": "2026-07-15T12:56:35.420Z"
+}

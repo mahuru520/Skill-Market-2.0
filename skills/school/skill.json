@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/school",
+  "name": "school",
+  "display_name": "School",
+  "description": "AI-powered education for K-12 students with parental controls, adaptive learning by age, homework help, exam prep, and progress tracking.",
+  "version": "1.0.0",
+  "icon": "🏫",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-14",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-02-14T18:36:06.974Z",
+  "updated_at": "2026-07-15T12:56:35.455Z"
+}

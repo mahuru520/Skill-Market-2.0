@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/table-image-generator",
+  "name": "table-image-generator",
+  "display_name": "Table Image Generator",
+  "description": "Generate clean table images from data. Perfect for Discord/Telegram where ASCII tables look broken. Supports dark/light mode, custom styling, and auto-sizing. No Puppeteer required. Companion to chart-image skill.",
+  "version": "1.4.0",
+  "icon": "📦",
+  "category": "image_video",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.4.0",
+      "date": "2026-02-18",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-02-18T07:59:22.688Z",
+  "updated_at": "2026-07-15T12:56:35.460Z"
+}

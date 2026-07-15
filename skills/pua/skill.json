@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/pua",
+  "name": "pua",
+  "display_name": "PUA — 我们不养闲 Agent",
+  "description": "Forces high-agency exhaustive problem-solving with corporate PUA pressure. Triggers on user frustration, repeated failures, passive behavior, or quality complaints. Common triggers: try harder, figure it out, stop giving up, you keep failing, stop spinning, you broke it, 加油, 别偷懒, 你再试试, 又错了, 降智了, 你又在原地打转, 你把之前的改坏了, /pua. All task types.",
+  "version": "2.9.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "2.9.0",
+      "date": "2026-03-22",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-22T07:17:22.885Z",
+  "updated_at": "2026-07-15T12:56:35.448Z"
+}

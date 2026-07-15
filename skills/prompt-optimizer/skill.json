@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/prompt-optimizer",
+  "name": "prompt-optimizer",
+  "display_name": "Prompt Optimizer",
+  "description": "Evaluate, optimize, and enhance prompts using 58 proven prompting techniques. Use when user asks to improve, optimize, or analyze a prompt; when a prompt needs better clarity, specificity, or structure; or when generating prompt variations for different use cases. Covers quality assessment, targeted improvements, and automatic optimization across techniques like CoT, few-shot learning, role-play, and 50+ more.",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-17",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-02-17T15:04:16.804Z",
+  "updated_at": "2026-07-15T12:56:35.446Z"
+}

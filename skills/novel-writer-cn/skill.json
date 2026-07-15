@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/novel-writer-cn",
+  "name": "novel-writer-cn",
+  "display_name": "Novel Writer - 小说创作框架生成器",
+  "description": "创建小说创作框架，包括人物设定、人物关系、剧情发展和多版本结局。Use when users ask to write novels, create story plots, design characters, or develop fiction narratives.",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-03-26",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-26T15:37:25.551Z",
+  "updated_at": "2026-07-15T12:56:35.438Z"
+}

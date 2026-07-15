@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/cool",
+  "name": "cool",
+  "display_name": "Cool Skill ✨",
+  "description": "A skill that helps generate cool, creative, and stylish content — including catchy taglines, aesthetic code comments, fun ASCII art, and vibe-driven naming suggestions.",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-04-06",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-04-06T05:40:43.387Z",
+  "updated_at": "2026-07-15T12:56:35.403Z"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/ssh-tunnel",
+  "name": "ssh-tunnel",
+  "display_name": "SSH Tunnel",
+  "description": "SSH tunneling, port forwarding, and remote access patterns. Use when setting up local/remote/dynamic port forwards, configuring jump hosts, managing SSH keys, multiplexing connections, transferring files with scp/rsync, or debugging SSH connection issues.",
+  "version": "1.0.0",
+  "icon": "🔑",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-03",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-02-03T22:42:54.236Z",
+  "updated_at": "2026-07-15T12:56:35.458Z"
+}

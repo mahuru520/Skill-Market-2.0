@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/stock-analysis-23",
+  "name": "stock-analysis-23",
+  "display_name": "策略股票分析技能",
+  "description": "AI股票分析技能，基于23个通达信技术指标(M001-M023)，包含MACD、KDJ、RSI、布林带、筹码分布、资金流向等经典指标。提供完整的买入/卖出决策规则、多维度评分系统、风险控制、多指标共振算法、选股策略和买卖点判断。适用于A股、港股、美股技术分析，支持妖股、强势股、趋势股挖掘。",
+  "version": "1.0.2",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.2",
+      "date": "2026-03-14",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-14T07:24:46.077Z",
+  "updated_at": "2026-07-15T12:56:35.459Z"
+}

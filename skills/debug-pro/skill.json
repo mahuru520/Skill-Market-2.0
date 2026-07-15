@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/debug-pro",
+  "name": "debug-pro",
+  "display_name": "debug-pro",
+  "description": "Systematic debugging methodology and language-specific debugging commands.",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-01-28",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-01-28T18:30:05.426Z",
+  "updated_at": "2026-07-15T12:56:35.408Z"
+}

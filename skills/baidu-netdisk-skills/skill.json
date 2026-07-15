@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/baidu-netdisk-skills",
+  "name": "baidu-netdisk-skills",
+  "display_name": "百度网盘存储 Skill",
+  "description": "百度网盘(Baidu Drive, pan.baidu.com)文件管理 — 上传、下载、转存、分享、搜索、移动、复制、重命名、创建文件夹、删除（高风险，需用户确认）。 同时支持 Agent 记忆备份/恢复（kimiclaw/maxclaw/qclaw/openclaw）。 TRIGGER: 用户消息明确提及\"百度网盘 / 百度云盘 / bdpan / baidu netdisk / baidu pan / baidu drive / pan.baidu.com\"并涉及具体文件操作； 或用户提及\"备份记忆 / 恢复记忆 / 查看记忆备份\"等记忆相关操作。 DO NOT TRIGGER: 仅泛指\"网盘 / 云盘 / 云存储 / 百度云\"而未明确指向百度网盘时；用户在讨论其他云盘服务（OneDrive/Google Drive/阿里云盘/夸克网盘等）；本地记忆整理/清理操作；PPT 生成操作（已独立为 baidu-wenku-aippt skill）。",
+  "version": "1.1.5",
+  "icon": "📦",
+  "category": "initialization",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.1.5",
+      "date": "2026-05-29",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-05-29T23:58:26.134Z",
+  "updated_at": "2026-07-15T12:56:35.387Z"
+}

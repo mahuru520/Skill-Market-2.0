@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/contextweave-interactive-architecture",
+  "name": "contextweave-interactive-architecture",
+  "display_name": "ContextWeave Skill",
+  "description": "强大的AI自动化绘图与复杂信息可视化工具（基于 ContextWeave）。不仅支持代码与系统架构的可视化，更广泛适用于复杂逻辑梳理、知识库转换、业务流程图、思维导图及长文本的结构化信息图生成。通过深度的语义分析与请求编排，一键将晦涩文本与复杂知识转化为清晰直观的图形表达。",
+  "version": "0.0.23",
+  "icon": "🧠",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "0.0.23",
+      "date": "2026-07-14",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-14T10:40:23.310Z",
+  "updated_at": "2026-07-15T12:56:35.400Z"
+}

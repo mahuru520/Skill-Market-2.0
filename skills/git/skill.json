@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/git",
+  "name": "git",
+  "display_name": "Git checks out middle commit, test it, then:",
+  "description": "Git commits, branches, rebases, merges, conflict resolution, history recovery, team workflows, and the commands needed for safe day-to-day version control. Use when (1) the task touches Git, a repository, commits, branches, merges, rebases, or pull requests; (2) history safety, collaboration, or recovery matter; (3) the agent should automatically apply Git discipline instead of improvising.",
+  "version": "1.0.8",
+  "icon": "📚",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.8",
+      "date": "2026-03-11",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-11T19:03:15.217Z",
+  "updated_at": "2026-07-15T12:56:35.421Z"
+}

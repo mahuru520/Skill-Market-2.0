@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/gitlab-repos",
+  "name": "gitlab-repos",
+  "display_name": "GitLab",
+  "description": "Work with GitLab projects, issues, merge requests, commits, branches, pipelines, and groups via the GitLab API. Use this skill when users want to list projects and groups, inspect issues and MRs, review commits and pipelines, create or update issues after confirmation, or manage project members and CI/CD pipelines in GitLab.",
+  "version": "1.0.5",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.5",
+      "date": "2026-06-09",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-06-09T07:08:32.777Z",
+  "updated_at": "2026-07-15T12:56:35.425Z"
+}

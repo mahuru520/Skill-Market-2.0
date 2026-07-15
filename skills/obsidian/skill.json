@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/obsidian",
+  "name": "obsidian",
+  "display_name": "Obsidian",
+  "description": "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.",
+  "version": "1.0.0",
+  "icon": "💎",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-01-04",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-01-04T16:49:22.143Z",
+  "updated_at": "2026-07-15T12:56:35.439Z"
+}

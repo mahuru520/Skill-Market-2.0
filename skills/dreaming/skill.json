@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/dreaming",
+  "name": "dreaming",
+  "display_name": "Dreaming",
+  "description": "Creative exploration during quiet hours. Turns idle heartbeat time into freeform thinking — hypotheticals, future scenarios, reflections, unexpected connections. Use when you want your agent to do something meaningful during low-activity periods instead of just returning HEARTBEAT_OK. Outputs written to files for human review later (like remembering dreams in the morning).",
+  "version": "1.0.2",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.2",
+      "date": "2026-02-21",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-02-21T15:46:59.877Z",
+  "updated_at": "2026-07-15T12:56:35.408Z"
+}

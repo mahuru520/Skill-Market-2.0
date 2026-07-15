@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/frontend-spec",
+  "name": "frontend-spec",
+  "display_name": "前端开发规范 Skill（企业级）",
+  "description": "企业级前端开发规范 Skill，包含命名、目录、CSS/JS/TS、Vue/React、Git、构建、性能、安全完整规范",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-15",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-15T12:56:35.419Z",
+  "updated_at": "2026-07-15T12:56:35.419Z"
+}

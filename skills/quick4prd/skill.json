@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/quick4prd",
+  "name": "quick4prd",
+  "display_name": "智能体需求文档生成 Skill",
+  "description": "用于生成和维护通用需求文档、功能设计文档、PRD/设计说明（Markdown 格式）。当用户提到\"新建需求文档\"\"新建PRD\"\"按模板生成功能设计文档\"\"更新设计说明\"\"生成文档快照\"\"批量生成文档\"\"初始化文档模板\"\"维护修订记录\"时，应使用本 skill。基于源 Markdown 输出版本化 .md 快照，支持模板初始化、单文档/profile/manifest 三种生成方式，以及旧快照自动归档。",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "initialization",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-15",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-15T12:56:35.449Z",
+  "updated_at": "2026-07-15T12:56:35.449Z"
+}

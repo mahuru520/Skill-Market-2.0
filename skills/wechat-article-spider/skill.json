@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/wechat-article-spider",
+  "name": "wechat-article-spider",
+  "display_name": "wechat-article-spider",
+  "description": "微信公众号文章爬虫 - 将微信公号文章转换为 Markdown + 本地图片",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "mail_communication",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-03-13",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-13T16:27:47.855Z",
+  "updated_at": "2026-07-15T12:56:35.490Z"
+}

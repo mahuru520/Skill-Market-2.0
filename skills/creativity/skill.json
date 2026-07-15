@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/creativity",
+  "name": "creativity",
+  "display_name": "Creativity",
+  "description": "Generate novel ideas calibrated to user taste. Auto-learns preferred styles, risk levels, and creative directions through feedback.",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-12",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-02-12T01:18:03.396Z",
+  "updated_at": "2026-07-15T12:56:35.404Z"
+}

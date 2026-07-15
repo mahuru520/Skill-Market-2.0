@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/academic-pre-review-committee",
+  "name": "academic-pre-review-committee",
+  "display_name": "学术预审委员会技能",
+  "description": "由五位资深审稿人组成的\"学术预审委员会\"，根据用户需求调度对应的审稿人角色进行论文审查。支持全面审稿（依次调度全部五个角色）和指定维度审稿。触发关键词：审稿、预审、论文审查、理论贡献、方法论、文献对话、逻辑链条、主编预筛、desk reject。",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-15",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-15T12:56:35.361Z",
+  "updated_at": "2026-07-15T12:56:35.361Z"
+}

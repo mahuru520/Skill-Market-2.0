@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/content-repurposer",
+  "name": "content-repurposer",
+  "display_name": "Content Repurposer — Create Once, Publish Everywhere",
+  "description": "Transform long-form content into platform-optimized snippets. Your agent takes one blog post, video transcript, or podcast notes and generates ready-to-publish Twitter threads, LinkedIn posts, email newsletters, and Instagram captions. Maintains voice consistency while adapting to each platform's format, length, and engagement patterns. Configure tone preferences, platform priorities, and output formats. Use when publishing content across multiple channels, repurposing existing material, or maximizing reach from a single piece of content.",
+  "version": "1.1.0",
+  "icon": "📦",
+  "category": "mail_communication",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.1.0",
+      "date": "2026-02-11",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-02-11T20:42:03.385Z",
+  "updated_at": "2026-07-15T12:56:35.396Z"
+}

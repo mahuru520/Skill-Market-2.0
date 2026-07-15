@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/meeting-to-action-items",
+  "name": "meeting-to-action-items",
+  "display_name": "Meeting to Action Items",
+  "description": "将非结构化的会议记录、聊天记录、语音转写文本转化为结构化的可执行项目状态 — 包含分类后的待办事项、负责人、截止时间、决策记录、风险标记和里程碑排期。用户说出\"整理会议记录\"、\"生成会议待办\"、\"从聊天记录提取任务\"等请求时激活。",
+  "version": "1.1.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.1.0",
+      "date": "2026-05-21",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-05-21T14:28:30.606Z",
+  "updated_at": "2026-07-15T12:56:35.435Z"
+}

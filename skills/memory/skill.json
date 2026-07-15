@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/memory",
+  "name": "memory",
+  "display_name": "Memory 🧠",
+  "description": "Infinite organized memory that complements your agent's built-in memory with unlimited categorized storage.",
+  "version": "1.0.2",
+  "icon": "🧠",
+  "category": "initialization",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.2",
+      "date": "2026-02-22",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-02-22T15:37:25.950Z",
+  "updated_at": "2026-07-15T12:56:35.436Z"
+}

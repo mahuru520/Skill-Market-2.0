@@ -5,7 +5,7 @@ import { readFileSync, writeFileSync, readdirSync, statSync, existsSync, mkdirSy
 import { join, basename } from "node:path";
 import { createHash } from "node:crypto";
 
-const SOURCE_DIR = "D:/Project/test1/skill";
+const SOURCE_DIR = "D:/Project/test1/skills1";
 const TARGET_ROOT = join(__dirname, "..", "skills");
 const DRY_RUN = process.argv.includes("--dry-run");
 
@@ -62,11 +62,15 @@ function extractIcon(frontmatter: Record<string, any>): string {
 // ---------------------------------------------------------------
 // 3. display_name 推断
 // ---------------------------------------------------------------
-function inferDisplayName(slug: string, frontmatter: Record<string, any>, description: string): string {
-  // 从 SKILL.md 标题推断（取 # 后面的内容）
+function inferDisplayName(slug: string, frontmatter: Record<string, any>, description: string, mdBody: string): string {
+  // 从 SKILL.md 的 h1 标题提取
+  const h1Match = mdBody.match(/^#\s+(.+)/m);
+  if (h1Match) {
+    const title = h1Match[1].trim().replace(/^[\p{Emoji}\u{FE0F}\u{200D}\u{FE0E}\s]+/u, "");
+    if (title.length > 1 && title.length < 80) return title;
+  }
   if (frontmatter.displayName) return frontmatter.displayName;
-  // 从 description 截取第一个有意义的短句（可能以英文开头，如 "A股量化..." 或 "B站内容助手"）
-  // 找连续的有意义片段：允许英文字母/数字开头，后跟中文
+  // 从 description 截取第一个有意义的短句
   const m = description.match(/([A-Za-z0-9]*[一-龥][一-龥\s，。！？、；：""''【】《》（）…—]*)/);
   if (m) {
     const cn = m[1].trim();
@@ -90,7 +94,25 @@ function parseFrontmatter(md: string): { frontmatter: Record<string, any>; body:
   const body = trimmed.slice(endIdx + 3).trimStart();
 
   const frontmatter: Record<string, any> = {};
+  let blockKey = "";       // 当前块标量 key
+  let blockLines: string[] = [];  // 块标量续行内容
+  let inBlock = false;     // 是否在块标量中
+
   for (const line of fmBlock.split("\n")) {
+    // 块标量续行：行首有缩进（空格/tab）
+    if (inBlock) {
+      if (line.length > 0 && (line[0] === " " || line[0] === "\t")) {
+        blockLines.push(line.trim());
+        continue;
+      }
+      // 非缩进行 → 块结束
+      frontmatter[blockKey] = blockLines.join(" ").replace(/\s+/g, " ").trim();
+      inBlock = false;
+      blockKey = "";
+      blockLines = [];
+      // 继续处理当前行
+    }
+
     const colonIdx = line.indexOf(":");
     if (colonIdx === -1) continue;
     const key = line.slice(0, colonIdx).trim();
@@ -98,6 +120,13 @@ function parseFrontmatter(md: string): { frontmatter: Record<string, any>; body:
     // 去掉引号
     if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
       value = value.slice(1, -1);
+    }
+    // YAML 块标量：|, >, >-, |-, >+, |+ 等
+    if (value === "|" || value === ">" || value === ">-" || value === "|-" || value === ">+" || value === "|+") {
+      inBlock = true;
+      blockKey = key;
+      blockLines = [];
+      continue;
     }
     // 简单 JSON 内联（如 metadata: { "openclaw": { "emoji": "📺" } }）
     if (value.startsWith("{") || value.startsWith("[")) {
@@ -108,6 +137,10 @@ function parseFrontmatter(md: string): { frontmatter: Record<string, any>; body:
       }
     }
     frontmatter[key] = value;
+  }
+  // 处理末尾未闭合的块标量
+  if (inBlock && blockKey) {
+    frontmatter[blockKey] = blockLines.join(" ").replace(/\s+/g, " ").trim();
   }
 
   return { frontmatter, body };
@@ -161,13 +194,26 @@ function convertSkill(skillDir: string, dirName: string): { skill: RawSkill | nu
     return { skill: null, slug: dirName, error: "SKILL.md not found" };
   }
   const mdContent = readFileSync(mdPath, "utf-8");
-  const { frontmatter } = parseFrontmatter(mdContent);
+  const { frontmatter, body } = parseFrontmatter(mdContent);
 
-  // 确定 slug
-  const slug = meta?.slug || frontmatter.slug || frontmatter.name || dirName.replace(/-\d+\.\d+\.\d+$/, "");
+  // 确定 slug：优先 _meta.json slug > frontmatter slug > 目录名去版本号
+  // frontmatter.name 如果是中文（非 ASCII），退回目录名
+  let fmName = frontmatter.name as string | undefined;
+  if (fmName && /[^\x00-\x7F]/.test(fmName)) fmName = undefined;
+  const slug = meta?.slug || frontmatter.slug || fmName || dirName.replace(/-\d+\.\d+\.\d+$/, "");
 
-  // 确定描述
-  const description = frontmatter.description || "";
+  // 确定描述：优先 frontmatter，否则从 body 第一段非空非标题行提取
+  let description = (frontmatter.description as string) || "";
+  if (!description && body) {
+    const lines = body.split("\n");
+    for (const l of lines) {
+      const t = l.trim();
+      if (t && !t.startsWith("#") && !t.startsWith(">") && !t.startsWith("---")) {
+        description = t.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").slice(0, 300).trim();
+        break;
+      }
+    }
+  }
 
   // 确定版本
   const version = meta?.version || frontmatter.version || "1.0.0";
@@ -184,7 +230,7 @@ function convertSkill(skillDir: string, dirName: string): { skill: RawSkill | nu
   const skill: RawSkill = {
     id: `openclaw/${slug}`,
     name: slug,
-    display_name: inferDisplayName(slug, frontmatter, description),
+    display_name: inferDisplayName(slug, frontmatter, description, body),
     description: description.replace(/\n/g, " ").trim(),
     version,
     icon,
@@ -220,8 +266,8 @@ function writeSkill(skill: RawSkill, slug: string, sourceDir: string): void {
   // 写入 skill.json（与现有技能格式对齐）
   writeFileSync(join(targetDir, "skill.json"), JSON.stringify(skill, null, 2) + "\n", "utf-8");
 
-  // 复制所有文件（除 _meta.json）
-  copyDirExcept(sourceDir, targetDir, new Set(["_meta.json"]));
+  // 复制所有文件（排除已有元数据文件，避免覆盖生成的 skill.json）
+  copyDirExcept(sourceDir, targetDir, new Set(["_meta.json", "skill.json", "skill.md", "README.md"]));
 }
 
 function copyDirExcept(src: string, dest: string, exclude: Set<string>): void {
