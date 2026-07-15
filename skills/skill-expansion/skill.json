@@ -7,15 +7,44 @@
   "icon": "➕",
   "category": "code_debug",
   "runtime_type": "local",
-  "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
+  "owner": {
+    "name": "official",
+    "type": "official",
+    "verified": true,
+    "avatar": "🏢",
+    "url": ""
+  },
   "readme": "SKILL.md",
   "files": [],
   "env_vars": [],
   "dependencies": [],
-  "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["local-execution"] },
+  "platform": {
+    "host": "openclaw",
+    "min_version": "1.0",
+    "capabilities": [
+      "local-execution"
+    ]
+  },
   "changelog": [
-    { "version": "1.0.0", "date": "2026-01-01", "changes": ["初始版本"], "type": "MINOR" }
+    {
+      "version": "1.0.0",
+      "date": "2026-01-01",
+      "changes": [
+        "初始版本"
+      ],
+      "type": "MINOR"
+    }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-01-01T00:00:00Z"
+  "updated_at": "2026-01-01T00:00:00Z",
+  "quickstart": {
+    "overview": "从外部仓库扩充安装新技能",
+    "scenarios": [
+      "现有技能无法满足需求时",
+      "需安装特定工具或技能包",
+      "网络受限需使用离线资源"
+    ],
+    "example": "请帮我从技能库安装PDF转换工具。",
+    "notes": "优先用指定GitLab仓库及本地packages/tools离线包。"
+  }
 }

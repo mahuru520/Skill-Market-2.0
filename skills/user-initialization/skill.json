@@ -7,15 +7,45 @@
   "icon": "👤",
   "category": "initialization",
   "runtime_type": "local",
-  "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
+  "owner": {
+    "name": "official",
+    "type": "official",
+    "verified": true,
+    "avatar": "🏢",
+    "url": ""
+  },
   "readme": "SKILL.md",
   "files": [],
   "env_vars": [],
   "dependencies": [],
-  "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["local-execution"] },
+  "platform": {
+    "host": "openclaw",
+    "min_version": "1.0",
+    "capabilities": [
+      "local-execution"
+    ]
+  },
   "changelog": [
-    { "version": "1.0.0", "date": "2026-01-01", "changes": ["初始版本"], "type": "MINOR" }
+    {
+      "version": "1.0.0",
+      "date": "2026-01-01",
+      "changes": [
+        "初始版本"
+      ],
+      "type": "MINOR"
+    }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-01-01T00:00:00Z"
+  "updated_at": "2026-01-01T00:00:00Z",
+  "quickstart": {
+    "overview": "引导新用户完成目录、技能安装与扩展配置",
+    "scenarios": [
+      "用户首次使用时初始化工作环境",
+      "安装默认必备技能并验证可用性",
+      "理解技能扩展优先级并手动安装新技能",
+      "查看并刷新当前项目技能清单"
+    ],
+    "example": "请帮我执行用户初始化，设置目录并安装默认技能",
+    "notes": "必须先设置目录约定，缺失技能优先从GitLab仓库补齐"
+  }
 }

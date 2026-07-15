@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-07-15T02:34:13.524Z",
-  "updated_at": "2026-07-15T02:34:13.524Z"
+  "updated_at": "2026-07-15T02:34:13.524Z",
+  "quickstart": {
+    "overview": "升级项目中的 OpenClaw 网关",
+    "scenarios": [
+      "升级本地网关",
+      "升级当前项目的 openclaw",
+      "升级非全局网关"
+    ],
+    "example": "升级本地网关",
+    "notes": "必须在 app/core 目录执行升级，先停止网关防 EBUSY 错误"
+  }
 }

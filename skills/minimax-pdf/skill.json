@@ -7,17 +7,50 @@
   "icon": "📊",
   "category": "document",
   "runtime_type": "local",
-  "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
+  "owner": {
+    "name": "official",
+    "type": "official",
+    "verified": true,
+    "avatar": "🏢",
+    "url": ""
+  },
   "readme": "SKILL.md",
   "files": [],
   "env_vars": [],
   "dependencies": [
-    { "name": "python", "min_version": "3.10", "type": "runtime" }
+    {
+      "name": "python",
+      "min_version": "3.10",
+      "type": "runtime"
+    }
   ],
-  "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["local-execution"] },
+  "platform": {
+    "host": "openclaw",
+    "min_version": "1.0",
+    "capabilities": [
+      "local-execution"
+    ]
+  },
   "changelog": [
-    { "version": "1.0.0", "date": "2026-01-01", "changes": ["初始版本"], "type": "MINOR" }
+    {
+      "version": "1.0.0",
+      "date": "2026-01-01",
+      "changes": [
+        "初始版本"
+      ],
+      "type": "MINOR"
+    }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-01-01T00:00:00Z"
+  "updated_at": "2026-01-01T00:00:00Z",
+  "quickstart": {
+    "overview": "生成、填充或重新格式化PDF文档",
+    "scenarios": [
+      "从头生成PDF报告",
+      "填充现有PDF表单字段",
+      "重新排版现有PDF文档"
+    ],
+    "example": "帮我生成一份2025年Q3战略评审报告，使用proposal类型，深蓝主色调，作者是策略团队。",
+    "notes": "需明确是新生成还是修改现有PDF，否则路由可能出错。"
+  }
 }

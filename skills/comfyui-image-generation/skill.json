@@ -37,10 +37,26 @@
     "base_url": "https://ai.ospreyai.cn",
     "auth_type": "gateway",
     "endpoints": [
-      { "method": "POST", "path": "/api/v1/ai/image/generate", "desc": "提交文生图工作流（请求体 prompt 工作流 JSON 不变）" },
-      { "method": "GET", "path": "/api/v1/ai/queue", "desc": "轮询队列" },
-      { "method": "GET", "path": "/api/v1/ai/tasks/{prompt_id}", "desc": "按任务查（原 /history 改为按 prompt_id 查）" },
-      { "method": "GET", "path": "/api/v1/ai/image/view/", "desc": "下载图片" }
+      {
+        "method": "POST",
+        "path": "/api/v1/ai/image/generate",
+        "desc": "提交文生图工作流（请求体 prompt 工作流 JSON 不变）"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/ai/queue",
+        "desc": "轮询队列"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/ai/tasks/{prompt_id}",
+        "desc": "按任务查（原 /history 改为按 prompt_id 查）"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/ai/image/view/",
+        "desc": "下载图片"
+      }
     ],
     "rate_limit": "10/min/IP burst 5",
     "timeout_sec": 120
@@ -54,7 +70,9 @@
   "platform": {
     "host": "openclaw",
     "min_version": "1.0",
-    "capabilities": ["skill-install"]
+    "capabilities": [
+      "skill-install"
+    ]
   },
   "install_count": 128,
   "hot": true,
@@ -73,10 +91,24 @@
     {
       "version": "1.0.0",
       "date": "2026-01-01",
-      "changes": ["初始版本，调用内网 ComfyUI"],
+      "changes": [
+        "初始版本，调用内网 ComfyUI"
+      ],
       "type": "MINOR"
     }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-06-25T00:00:00Z"
+  "updated_at": "2026-06-25T00:00:00Z",
+  "quickstart": {
+    "overview": "通过公网网关使用ComfyUI进行文生图",
+    "scenarios": [
+      "首次生成图片",
+      "查看任务状态",
+      "下载PNG图片",
+      "调优生成参数",
+      "排查服务问题"
+    ],
+    "example": "帮我生成一张1024x1024的小狗坐在草地上的图片",
+    "notes": "需要Bearer Token鉴权，英文提示词效果更佳"
+  }
 }

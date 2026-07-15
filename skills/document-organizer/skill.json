@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-03-12T15:14:58.960Z",
-  "updated_at": "2026-07-15T02:34:13.453Z"
+  "updated_at": "2026-07-15T02:34:13.453Z",
+  "quickstart": {
+    "overview": "批量转换Office文档为Markdown",
+    "scenarios": [
+      "迁移历史文档到知识库",
+      "统一文档格式为Markdown",
+      "批量处理项目文档"
+    ],
+    "example": "请将G:\\历史文档中的所有.doc和.xls文件转换为Markdown，保存到d:\\知识库。",
+    "notes": "需预装LibreOffice和markitdown，首次运行自动检测路径。"
+  }
 }

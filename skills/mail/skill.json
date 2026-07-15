@@ -8,27 +8,77 @@
   "category": "mail_communication",
   "runtime_type": "external_api",
   "billing": "free",
-  "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
+  "owner": {
+    "name": "official",
+    "type": "official",
+    "verified": true,
+    "avatar": "🏢",
+    "url": ""
+  },
   "readme": "SKILL.md",
   "files": [],
   "env_vars": [
-    { "key": "MAIL_USER", "description": "邮箱地址", "required": true, "source": "用户配置", "example": "user@example.com" },
-    { "key": "MAIL_PASS", "description": "邮箱授权码", "required": true, "source": "邮箱服务商授权码", "example": "授权码占位" }
+    {
+      "key": "MAIL_USER",
+      "description": "邮箱地址",
+      "required": true,
+      "source": "用户配置",
+      "example": "user@example.com"
+    },
+    {
+      "key": "MAIL_PASS",
+      "description": "邮箱授权码",
+      "required": true,
+      "source": "邮箱服务商授权码",
+      "example": "授权码占位"
+    }
   ],
   "api": {
     "base_url": "smtp/imap 邮件服务器",
     "auth_type": "gateway",
     "endpoints": [
-      { "method": "SMTP", "path": "smtp.qiye.aliyun.com:465 / smtp.exmail.qq.com:465", "desc": "发送邮件" },
-      { "method": "IMAP", "path": "imap.qiye.aliyun.com:993 / imap.exmail.qq.com:993", "desc": "接收邮件" }
+      {
+        "method": "SMTP",
+        "path": "smtp.qiye.aliyun.com:465 / smtp.exmail.qq.com:465",
+        "desc": "发送邮件"
+      },
+      {
+        "method": "IMAP",
+        "path": "imap.qiye.aliyun.com:993 / imap.exmail.qq.com:993",
+        "desc": "接收邮件"
+      }
     ],
     "rate_limit": "邮箱服务商限制",
     "timeout_sec": 30
   },
-  "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["skill-install"] },
+  "platform": {
+    "host": "openclaw",
+    "min_version": "1.0",
+    "capabilities": [
+      "skill-install"
+    ]
+  },
   "changelog": [
-    { "version": "1.0.0", "date": "2026-01-01", "changes": ["初始版本"], "type": "MINOR" }
+    {
+      "version": "1.0.0",
+      "date": "2026-01-01",
+      "changes": [
+        "初始版本"
+      ],
+      "type": "MINOR"
+    }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-01-01T00:00:00Z"
+  "updated_at": "2026-01-01T00:00:00Z",
+  "quickstart": {
+    "overview": "问答式配置邮箱并收发邮件",
+    "scenarios": [
+      "配置邮箱",
+      "发邮件给指定联系人",
+      "查收新邮件",
+      "查看邮箱配置"
+    ],
+    "example": "发邮件给老板，主题是周报，内容写“本周工作汇报见附件”",
+    "notes": "配置前需先获取邮箱授权码"
+  }
 }

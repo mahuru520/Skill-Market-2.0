@@ -7,18 +7,55 @@
   "icon": "📗",
   "category": "document",
   "runtime_type": "local",
-  "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
+  "owner": {
+    "name": "official",
+    "type": "official",
+    "verified": true,
+    "avatar": "🏢",
+    "url": ""
+  },
   "readme": "SKILL.md",
   "files": [],
   "env_vars": [],
   "dependencies": [
-    { "name": "python", "min_version": "3.10", "type": "runtime" },
-    { "name": "openpyxl", "min_version": "3.1", "type": "tool" }
+    {
+      "name": "python",
+      "min_version": "3.10",
+      "type": "runtime"
+    },
+    {
+      "name": "openpyxl",
+      "min_version": "3.1",
+      "type": "tool"
+    }
   ],
-  "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["local-execution"] },
+  "platform": {
+    "host": "openclaw",
+    "min_version": "1.0",
+    "capabilities": [
+      "local-execution"
+    ]
+  },
   "changelog": [
-    { "version": "1.0.0", "date": "2026-01-01", "changes": ["初始版本"], "type": "MINOR" }
+    {
+      "version": "1.0.0",
+      "date": "2026-01-01",
+      "changes": [
+        "初始版本"
+      ],
+      "type": "MINOR"
+    }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-01-01T00:00:00Z"
+  "updated_at": "2026-01-01T00:00:00Z",
+  "quickstart": {
+    "overview": "处理Excel文件的读写与修复",
+    "scenarios": [
+      "读取并分析现有Excel数据",
+      "创建带有公式的新Excel文件",
+      "编辑现有Excel文件添加公式"
+    ],
+    "example": "帮我分析销售表的总收入，保留两位小数",
+    "notes": "直接处理，不创建子代理；编辑时不新建Workbook"
+  }
 }

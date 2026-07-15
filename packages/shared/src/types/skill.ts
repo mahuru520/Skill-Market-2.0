@@ -85,6 +85,13 @@ export interface SkillListItem {
   updatedAt: string;
 }
 
+export interface QuickstartData {
+  overview: string;
+  scenarios: string[];
+  example: string;
+  notes: string;
+}
+
 // 详情页 skill(完整)
 export interface SkillDetail {
   slug: string;
@@ -113,6 +120,7 @@ export interface SkillDetail {
   score: number;
   billing: Billing;
   readme: string;
+  quickstart?: QuickstartData;
   files?: SkillFile[];
   createdAt: string;
   updatedAt: string;

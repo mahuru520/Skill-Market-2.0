@@ -21,6 +21,7 @@ import type {
   SkillApi,
   SkillMigration,
   SkillFile,
+  QuickstartData,
 } from "@skill-market/shared";
 
 const SORT_FIELD: Record<SortBy, string> = {
@@ -151,6 +152,7 @@ export class SkillsService {
       score: r.score,
       billing: r.billing as Billing,
       readme: r.readme,
+      quickstart: parseJson<QuickstartData>(r.summary),
       files: parseJson<SkillFile[]>(r.files),
       createdAt: r.createdAt.toISOString(),
       updatedAt: r.updatedAt.toISOString(),

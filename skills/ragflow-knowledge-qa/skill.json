@@ -7,21 +7,57 @@
   "icon": "📚",
   "category": "code_debug",
   "runtime_type": "gateway_migrated_api",
-  "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
+  "owner": {
+    "name": "official",
+    "type": "official",
+    "verified": true,
+    "avatar": "🏢",
+    "url": ""
+  },
   "readme": "SKILL.md",
   "files": [],
   "env_vars": [
-    { "key": "GW", "description": "外网网关地址", "required": true, "source": "固定 https://ai.ospreyai.cn", "example": "https://ai.ospreyai.cn" },
-    { "key": "API_KEY", "description": "网关 new-api key", "required": true, "source": "网关控制台申请", "example": "sk-xxx" },
-    { "key": "RAGFLOW_TOKEN", "description": "RAGFlow 后端 token", "required": true, "source": "RAGFlow API Key", "example": "ragflow-xxx" }
+    {
+      "key": "GW",
+      "description": "外网网关地址",
+      "required": true,
+      "source": "固定 https://ai.ospreyai.cn",
+      "example": "https://ai.ospreyai.cn"
+    },
+    {
+      "key": "API_KEY",
+      "description": "网关 new-api key",
+      "required": true,
+      "source": "网关控制台申请",
+      "example": "sk-xxx"
+    },
+    {
+      "key": "RAGFLOW_TOKEN",
+      "description": "RAGFlow 后端 token",
+      "required": true,
+      "source": "RAGFlow API Key",
+      "example": "ragflow-xxx"
+    }
   ],
   "api": {
     "base_url": "https://ai.ospreyai.cn",
     "auth_type": "gateway_plus_backend",
     "endpoints": [
-      { "method": "GET", "path": "/api/v1/rag/datasets", "desc": "列出知识库（获取 dataset_id）" },
-      { "method": "POST", "path": "/api/v1/rag/retrieval", "desc": "检索（返回原文切片，推荐）" },
-      { "method": "POST", "path": "/api/v1/rag/chats", "desc": "检索 + 生成（需唯一 name，answer 可能为空）" }
+      {
+        "method": "GET",
+        "path": "/api/v1/rag/datasets",
+        "desc": "列出知识库（获取 dataset_id）"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/rag/retrieval",
+        "desc": "检索（返回原文切片，推荐）"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/rag/chats",
+        "desc": "检索 + 生成（需唯一 name，answer 可能为空）"
+      }
     ],
     "rate_limit": "10/min/IP burst 5",
     "timeout_sec": 120
@@ -32,10 +68,35 @@
     "behavior_change": "由内网纯检索 POST /api/v1/datasets/{id}/chunks → 网关 POST /api/v1/rag/retrieval（按 dataset_ids 检索，返回原文切片）。chats 接口同步 answer 常为空，建议用 retrieval 自行组织回答。双 token 鉴权（Authorization + X-Authorization）。已端到端实测通过（datasets/retrieval/chats 三接口）。",
     "status": "verified"
   },
-  "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["skill-install"] },
+  "platform": {
+    "host": "openclaw",
+    "min_version": "1.0",
+    "capabilities": [
+      "skill-install"
+    ]
+  },
   "changelog": [
-    { "version": "2.0.0", "date": "2026-06-25", "changes": ["内网 RAGFlow 迁移至外网网关", "纯检索 → 检索 + 生成（行为略变）", "双 token 鉴权"], "type": "MAJOR" }
+    {
+      "version": "2.0.0",
+      "date": "2026-06-25",
+      "changes": [
+        "内网 RAGFlow 迁移至外网网关",
+        "纯检索 → 检索 + 生成（行为略变）",
+        "双 token 鉴权"
+      ],
+      "type": "MAJOR"
+    }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-06-25T00:00:00Z"
+  "updated_at": "2026-06-25T00:00:00Z",
+  "quickstart": {
+    "overview": "通过RAGFlow知识库检索并回答问题",
+    "scenarios": [
+      "查询可用知识库列表",
+      "检索知识库原文切片",
+      "基于切片生成答案"
+    ],
+    "example": "帮我查一下公司差旅报销的流程",
+    "notes": "需同时携带网关与后端双Token鉴权，优先用检索接口"
+  }
 }

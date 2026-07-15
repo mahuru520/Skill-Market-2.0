@@ -41,6 +41,12 @@ interface RawSkill {
   examples?: string[];
   install_count?: number;
   hot?: boolean;
+  quickstart?: {
+    overview: string;
+    scenarios: string[];
+    example: string;
+    notes: string;
+  };
   changelog?: Array<{
     version: string;
     date: string;
@@ -155,7 +161,7 @@ export class IndexerService implements OnModuleInit, OnModuleDestroy {
         displayName: raw.display_name ?? slug,
         description: raw.description ?? "",
         descriptionEn: raw.description_en ?? null,
-        summary: "",
+        summary: raw.quickstart ? JSON.stringify(raw.quickstart) : "",
         version: raw.version ?? "",
         icon: raw.icon ?? "",
         category: raw.category ?? "other",

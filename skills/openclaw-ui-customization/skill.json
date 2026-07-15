@@ -7,17 +7,50 @@
   "icon": "🎨",
   "category": "system_config",
   "runtime_type": "local",
-  "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
+  "owner": {
+    "name": "official",
+    "type": "official",
+    "verified": true,
+    "avatar": "🏢",
+    "url": ""
+  },
   "readme": "SKILL.md",
   "files": [],
   "env_vars": [],
   "dependencies": [
-    { "name": "node", "min_version": "18", "type": "runtime" }
+    {
+      "name": "node",
+      "min_version": "18",
+      "type": "runtime"
+    }
   ],
-  "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["ui-customization"] },
+  "platform": {
+    "host": "openclaw",
+    "min_version": "1.0",
+    "capabilities": [
+      "ui-customization"
+    ]
+  },
   "changelog": [
-    { "version": "1.0.0", "date": "2026-01-01", "changes": ["初始版本"], "type": "MINOR" }
+    {
+      "version": "1.0.0",
+      "date": "2026-01-01",
+      "changes": [
+        "初始版本"
+      ],
+      "type": "MINOR"
+    }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-01-01T00:00:00Z"
+  "updated_at": "2026-01-01T00:00:00Z",
+  "quickstart": {
+    "overview": "定制OpenClaw界面品牌元素",
+    "scenarios": [
+      "替换 favicon 与品牌 Logo",
+      "修改控制台页面标题与左上角品牌文案",
+      "进行企业化定制部署"
+    ],
+    "example": "请帮我把 OpenClaw 控制台的 Logo 和标题换成我们公司的品牌。",
+    "notes": "需按步骤构建并验证，确保刷新后定制结果保持。"
+  }
 }

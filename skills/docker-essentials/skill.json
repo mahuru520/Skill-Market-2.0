@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-01-29T13:07:20.015Z",
-  "updated_at": "2026-07-15T02:34:13.452Z"
+  "updated_at": "2026-07-15T02:34:13.452Z",
+  "quickstart": {
+    "overview": "Docker容器与镜像管理基本操作",
+    "scenarios": [
+      "运行与管理容器生命周期",
+      "调试与检查容器运行状态",
+      "使用Docker Compose编排多容器应用"
+    ],
+    "example": "帮我后台运行一个nginx容器，并把本机80端口映射上去",
+    "notes": "注意资源清理与安全，使用 .dockerignore 和版本标签"
+  }
 }

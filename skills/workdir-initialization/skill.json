@@ -7,15 +7,44 @@
   "icon": "📁",
   "category": "initialization",
   "runtime_type": "local",
-  "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
+  "owner": {
+    "name": "official",
+    "type": "official",
+    "verified": true,
+    "avatar": "🏢",
+    "url": ""
+  },
   "readme": "SKILL.md",
   "files": [],
   "env_vars": [],
   "dependencies": [],
-  "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["local-execution"] },
+  "platform": {
+    "host": "openclaw",
+    "min_version": "1.0",
+    "capabilities": [
+      "local-execution"
+    ]
+  },
   "changelog": [
-    { "version": "1.0.0", "date": "2026-01-01", "changes": ["初始版本"], "type": "MINOR" }
+    {
+      "version": "1.0.0",
+      "date": "2026-01-01",
+      "changes": [
+        "初始版本"
+      ],
+      "type": "MINOR"
+    }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-01-01T00:00:00Z"
+  "updated_at": "2026-01-01T00:00:00Z",
+  "quickstart": {
+    "overview": "明确用户文件与系统配置目录的职责划分",
+    "scenarios": [
+      "初始化系统目录结构",
+      "配置用户文件存储路径",
+      "区分用户数据与技能维护路径"
+    ],
+    "example": "请初始化目录结构，把用户文件统一放到 /data/file/，系统配置放在 /root/.openclaw/workspace/。",
+    "notes": "确保路径区分清晰，用户操作优先使用/data/file/"
+  }
 }

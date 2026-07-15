@@ -7,21 +7,57 @@
   "icon": "📑",
   "category": "code_debug",
   "runtime_type": "gateway_migrated_api",
-  "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
+  "owner": {
+    "name": "official",
+    "type": "official",
+    "verified": true,
+    "avatar": "🏢",
+    "url": ""
+  },
   "readme": "SKILL.md",
   "files": [],
   "env_vars": [
-    { "key": "GW", "description": "外网网关地址", "required": true, "source": "固定 https://ai.ospreyai.cn", "example": "https://ai.ospreyai.cn" },
-    { "key": "API_KEY", "description": "网关 new-api key", "required": true, "source": "网关控制台申请", "example": "sk-xxx" },
-    { "key": "DIFY_TOKEN", "description": "Dify 后端 token", "required": true, "source": "Dify 应用 API Key", "example": "app-xxx" }
+    {
+      "key": "GW",
+      "description": "外网网关地址",
+      "required": true,
+      "source": "固定 https://ai.ospreyai.cn",
+      "example": "https://ai.ospreyai.cn"
+    },
+    {
+      "key": "API_KEY",
+      "description": "网关 new-api key",
+      "required": true,
+      "source": "网关控制台申请",
+      "example": "sk-xxx"
+    },
+    {
+      "key": "DIFY_TOKEN",
+      "description": "Dify 后端 token",
+      "required": true,
+      "source": "Dify 应用 API Key",
+      "example": "app-xxx"
+    }
   ],
   "api": {
     "base_url": "https://ai.ospreyai.cn",
     "auth_type": "gateway_plus_backend",
     "endpoints": [
-      { "method": "POST", "path": "/api/v1/ai/workflow/files/upload", "desc": "上传合同文件" },
-      { "method": "POST", "path": "/api/v1/ai/workflow/workflows/run", "desc": "运行合同审核工作流（blocking/streaming，timeout 1800s）" },
-      { "method": "GET", "path": "/api/v1/ai/workflow/parameters", "desc": "获取工作流入参表单" }
+      {
+        "method": "POST",
+        "path": "/api/v1/ai/workflow/files/upload",
+        "desc": "上传合同文件"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/ai/workflow/workflows/run",
+        "desc": "运行合同审核工作流（blocking/streaming，timeout 1800s）"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/ai/workflow/parameters",
+        "desc": "获取工作流入参表单"
+      }
     ],
     "rate_limit": "10/min/IP burst 5",
     "timeout_sec": 1800
@@ -32,10 +68,35 @@
     "behavior_change": "上传改 POST /api/v1/ai/workflow/files/upload，运行改 POST /api/v1/ai/workflow/workflows/run（注意 workflow 出现两次），均经网关。鉴权改为网关 Authorization + 后端 X-Authorization 双 token。已端到端实测通过（上传→workflows/run 成功返回 task_id/workflow_run_id/outputs）。",
     "status": "verified"
   },
-  "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["skill-install"] },
+  "platform": {
+    "host": "openclaw",
+    "min_version": "1.0",
+    "capabilities": [
+      "skill-install"
+    ]
+  },
   "changelog": [
-    { "version": "2.0.0", "date": "2026-06-25", "changes": ["内网 Dify 迁移至外网网关", "双 token 鉴权", "上传/workflows/run 端到端实测通过"], "type": "MAJOR" }
+    {
+      "version": "2.0.0",
+      "date": "2026-06-25",
+      "changes": [
+        "内网 Dify 迁移至外网网关",
+        "双 token 鉴权",
+        "上传/workflows/run 端到端实测通过"
+      ],
+      "type": "MAJOR"
+    }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-06-25T00:00:00Z"
+  "updated_at": "2026-06-25T00:00:00Z",
+  "quickstart": {
+    "overview": "调用 Dify 工作流自动审核合同风险",
+    "scenarios": [
+      "上传合同文件获取风险评估报告",
+      "大批量合同自动审核",
+      "流式处理大合同避免超时"
+    ],
+    "example": "用 AI 网关帮我审一下这份合同文件，生成风险报告。",
+    "notes": "需要同时提供 API_KEY 和 DIFY_TOKEN，工作流超时设 30 分钟。"
+  }
 }

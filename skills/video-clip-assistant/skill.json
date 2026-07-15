@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-03-27T02:05:21.478Z",
-  "updated_at": "2026-07-15T02:34:13.666Z"
+  "updated_at": "2026-07-15T02:34:13.666Z",
+  "quickstart": {
+    "overview": "基于FFmpeg的视频自动剪辑助手",
+    "scenarios": [
+      "从会议录像提取精华片段",
+      "为视频烧录字幕",
+      "导出多平台短视频"
+    ],
+    "example": "请帮我把这个视频从10秒处开始截取30秒，并加上SRT字幕。",
+    "notes": "必须安装FFmpeg；生成字幕需配置ASR（Whisper或FunClip）"
+  }
 }

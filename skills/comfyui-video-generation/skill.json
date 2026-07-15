@@ -7,21 +7,55 @@
   "icon": "🎬",
   "category": "image_video",
   "runtime_type": "gateway_migrated_api",
-  "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
+  "owner": {
+    "name": "official",
+    "type": "official",
+    "verified": true,
+    "avatar": "🏢",
+    "url": ""
+  },
   "readme": "SKILL.md",
   "files": [],
   "env_vars": [
-    { "key": "GW", "description": "外网网关地址", "required": true, "source": "固定 https://ai.ospreyai.cn", "example": "https://ai.ospreyai.cn" },
-    { "key": "API_KEY", "description": "网关 new-api key", "required": true, "source": "网关控制台申请", "example": "sk-xxx" }
+    {
+      "key": "GW",
+      "description": "外网网关地址",
+      "required": true,
+      "source": "固定 https://ai.ospreyai.cn",
+      "example": "https://ai.ospreyai.cn"
+    },
+    {
+      "key": "API_KEY",
+      "description": "网关 new-api key",
+      "required": true,
+      "source": "网关控制台申请",
+      "example": "sk-xxx"
+    }
   ],
   "api": {
     "base_url": "https://ai.ospreyai.cn",
     "auth_type": "gateway",
     "endpoints": [
-      { "method": "POST", "path": "/api/v1/upload", "desc": "上传输入图片" },
-      { "method": "POST", "path": "/api/v1/ai/video/generate", "desc": "提交图生视频工作流" },
-      { "method": "GET", "path": "/api/v1/ai/queue", "desc": "轮询队列" },
-      { "method": "GET", "path": "/api/v1/ai/image/view/", "desc": "下载视频" }
+      {
+        "method": "POST",
+        "path": "/api/v1/upload",
+        "desc": "上传输入图片"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/ai/video/generate",
+        "desc": "提交图生视频工作流"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/ai/queue",
+        "desc": "轮询队列"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/ai/image/view/",
+        "desc": "下载视频"
+      }
     ],
     "rate_limit": "10/min/IP burst 5",
     "timeout_sec": 180
@@ -32,10 +66,34 @@
     "behavior_change": "图片上传改为 POST /api/v1/upload（带 overwrite=true），提交改为 POST /api/v1/ai/video/generate，任务查询改为按 prompt_id 查 GET /api/v1/ai/tasks/{prompt_id}（原 /history 一次返回全部，网关按任务查）。视频生成耗时 30s–2min，限流 10次/分/IP。已端到端实测通过（上传→提交→轮询→下载 MP4）。",
     "status": "verified"
   },
-  "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["skill-install"] },
+  "platform": {
+    "host": "openclaw",
+    "min_version": "1.0",
+    "capabilities": [
+      "skill-install"
+    ]
+  },
   "changelog": [
-    { "version": "2.0.0", "date": "2026-06-25", "changes": ["内网 API 迁移至外网网关", "增加 429 限流退避"], "type": "MAJOR" }
+    {
+      "version": "2.0.0",
+      "date": "2026-06-25",
+      "changes": [
+        "内网 API 迁移至外网网关",
+        "增加 429 限流退避"
+      ],
+      "type": "MAJOR"
+    }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-06-25T00:00:00Z"
+  "updated_at": "2026-06-25T00:00:00Z",
+  "quickstart": {
+    "overview": "通过API将图片转为视频",
+    "scenarios": [
+      "上传图片并提交工作流生成视频",
+      "查询视频生成任务状态",
+      "下载生成的MP4视频文件"
+    ],
+    "example": "帮我用这张图片生成视频，提示词是'一只猫在奔跑'，5秒长度",
+    "notes": "需有API密钥，先上传图片获取文件名再提交工作流"
+  }
 }

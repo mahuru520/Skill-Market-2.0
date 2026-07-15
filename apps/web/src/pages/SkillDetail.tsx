@@ -13,11 +13,15 @@ import {
   BILLING_COLOR,
   CATEGORY_LABEL,
 } from "../lib/labels";
-import type { SkillFile, ChangelogEntry } from "@skill-market/shared";
+import type { SkillFile, ChangelogEntry, QuickstartData } from "@skill-market/shared";
+
+/* ================================================================ */
+/*  主组件                                                           */
+/* ================================================================ */
 
 export function SkillDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const [tab, setTab] = useState<"overview" | "versions">("overview");
+  const [tab, setTab] = useState<"overview" | "quickstart" | "versions">("overview");
   const queryClient = useQueryClient();
 
   const detailQ = useQuery({
@@ -74,12 +78,14 @@ export function SkillDetail() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-8">
-        {/* 左侧主区 —— minmax(0,1fr) 让此列可收缩,内部超宽元素不会撑破整页 */}
+        {/* 左侧主区 */}
         <div className="min-w-0">
-          {/* Tab */}
           <div className="border-b border-line flex gap-6 mb-6">
             <TabButton active={tab === "overview"} onClick={() => setTab("overview")}>
               概述
+            </TabButton>
+            <TabButton active={tab === "quickstart"} onClick={() => setTab("quickstart")}>
+              快速开始
             </TabButton>
             <TabButton active={tab === "versions"} onClick={() => setTab("versions")}>
               历史版本
@@ -87,18 +93,13 @@ export function SkillDetail() {
           </div>
 
           {tab === "overview" ? (
-            <>
-              {s.description && (
-                <p className="text-base text-ink-mute leading-relaxed border-b border-line pb-4 mb-6">
-                  {s.description}
-                </p>
-              )}
-              <article className="prose max-w-none break-words [&_pre]:overflow-x-auto [&_pre]:whitespace-pre [&_pre]:rounded-md [&_pre]:border [&_pre]:border-line [&_pre]:bg-canvas [&_pre]:p-3 [&_pre]:text-black [&_code]:break-all [&_code]:text-black [&_table]:block [&_table]:overflow-x-auto [&_table]:w-full [&_img]:max-w-full [&_a]:break-all">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                  {stripFrontMatter(s.readme || "（无说明文档）")}
-                </ReactMarkdown>
-              </article>
-            </>
+            <OverviewTab readme={s.readme} />
+          ) : tab === "quickstart" ? (
+            <QuickStartTab
+              quickstart={s.quickstart}
+              displayName={s.displayName}
+              description={s.description}
+            />
           ) : (
             <VersionsTab
               versions={versionsQ.data ?? []}
@@ -128,13 +129,16 @@ export function SkillDetail() {
             </dl>
           </div>
 
-          {/* 文件清单 */}
           <FileList files={s.files} />
         </aside>
       </div>
     </div>
   );
 }
+
+/* ================================================================ */
+/*  子组件                                                           */
+/* ================================================================ */
 
 function TabButton({
   active,
@@ -168,6 +172,127 @@ function InfoRow({ label, value }: { label: string; value: string }) {
   );
 }
 
+/* ---------- 排版样式 ---------- */
+
+const PROSE = `
+  max-w-none break-words text-[15px] leading-relaxed text-ink
+  [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-ink [&_h1]:mt-10 [&_h1]:mb-4 [&_h1]:pb-2 [&_h1]:border-b [&_h1]:border-line
+  [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-ink [&_h2]:mt-8 [&_h2]:mb-3 [&_h2]:pl-3 [&_h2]:border-l-[3px] [&_h2]:border-brand
+  [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-ink [&_h3]:mt-6 [&_h3]:mb-2
+  [&_h4]:text-base [&_h4]:font-semibold [&_h4]:text-ink-soft [&_h4]:mt-5 [&_h4]:mb-2
+  [&_p]:mb-4 [&_p]:text-ink
+  [&_ul]:mb-4 [&_ul]:pl-5 [&_ul]:space-y-1.5
+  [&_ol]:mb-4 [&_ol]:pl-5 [&_ol]:space-y-1.5
+  [&_li]:text-ink [&_li]:pl-1
+  [&_li::marker]:text-ink-mute
+  [&_a]:text-brand [&_a]:underline [&_a]:decoration-brand/30 [&_a]:underline-offset-2 [&_a]:break-all hover:[&_a]:decoration-brand
+  [&_strong]:text-ink [&_strong]:font-semibold
+  [&_blockquote]:border-l-[3px] [&_blockquote]:border-brand/30 [&_blockquote]:bg-canvas [&_blockquote]:px-4 [&_blockquote]:py-3 [&_blockquote]:rounded-r-md [&_blockquote]:mb-4 [&_blockquote]:text-ink-soft [&_blockquote]:italic
+  [&_hr]:my-8 [&_hr]:border-line
+  [&_pre]:overflow-x-auto [&_pre]:whitespace-pre [&_pre]:rounded-lg [&_pre]:border [&_pre]:border-line [&_pre]:bg-[#1e1e1e] [&_pre]:p-4 [&_pre]:mb-5 [&_pre]:text-sm
+  [&_pre_code]:text-[#d4d4d4] [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:text-sm
+  [&_code]:rounded [&_code]:bg-canvas [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-sm [&_code]:text-brand [&_code]:font-normal [&_code]:break-all
+  [&_table]:w-full [&_table]:overflow-x-auto [&_table]:border-collapse [&_table]:text-sm [&_table]:mb-5
+  [&_thead]:border-b-2 [&_thead]:border-line
+  [&_th]:bg-canvas [&_th]:px-3 [&_th]:py-2.5 [&_th]:text-left [&_th]:text-xs [&_th]:font-semibold [&_th]:uppercase [&_th]:tracking-wide [&_th]:text-ink-soft
+  [&_td]:px-3 [&_td]:py-2.5 [&_td]:text-ink [&_td]:border-b [&_td]:border-line
+  [&_tbody_tr]:hover:bg-canvas/60
+  [&_img]:max-w-full [&_img]:rounded-lg [&_img]:my-4
+`.replace(/\s+/g, " ").trim();
+
+/* ---------- 概述 Tab ---------- */
+
+function OverviewTab({ readme }: { readme?: string }) {
+  return (
+    <article className={PROSE}>
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        {stripFrontMatter(readme || "（无说明文档）")}
+      </ReactMarkdown>
+    </article>
+  );
+}
+
+/* ---------- 快速开始 Tab ---------- */
+
+function QuickStartTab({
+  quickstart,
+  displayName,
+  description,
+}: {
+  quickstart?: QuickstartData;
+  displayName: string;
+  description: string;
+}) {
+  if (!quickstart) {
+    return (
+      <div className="bg-surface rounded-card border border-line p-8 text-center">
+        <p className="text-ink-mute text-sm">
+          该技能暂未生成快速开始摘要，
+          <br />
+          请切换到「概述」查看完整文档。
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-5">
+      {/* 概述 + 描述 */}
+      <div className="bg-surface rounded-card border border-line p-5">
+        <h2 className="text-xl font-bold text-ink mb-2">{displayName}</h2>
+        <p className="text-ink-soft text-sm leading-relaxed">{quickstart.overview}</p>
+        <p className="text-ink-mute text-xs mt-2">{description}</p>
+      </div>
+
+      {/* 适用场景 */}
+      {quickstart.scenarios.length > 0 && (
+        <div className="bg-surface rounded-card border border-line overflow-hidden">
+          <div className="flex items-center gap-2 px-5 py-3 bg-canvas border-b border-line">
+            <span className="text-base">🎯</span>
+            <h3 className="font-semibold text-ink text-sm">适用场景</h3>
+          </div>
+          <div className="p-5">
+            <ul className="space-y-1.5">
+              {quickstart.scenarios.map((s, i) => (
+                <li key={i} className="flex items-start gap-2 text-[15px] text-ink leading-relaxed">
+                  <span className="text-ink-mute mt-0.5 shrink-0">•</span>
+                  <span>{s}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {/* 快速上手 */}
+      <div className="bg-surface rounded-card border border-line overflow-hidden">
+        <div className="flex items-center gap-2 px-5 py-3 bg-canvas border-b border-line">
+          <span className="text-base">🚀</span>
+          <h3 className="font-semibold text-ink text-sm">快速上手</h3>
+        </div>
+        <div className="p-5">
+          <p className="text-[15px] text-ink leading-relaxed">{quickstart.example}</p>
+        </div>
+      </div>
+
+      {/* 注意事项 */}
+      {quickstart.notes && quickstart.notes !== "无" && (
+        <div className="bg-surface rounded-card border border-line overflow-hidden">
+          <div className="flex items-center gap-2 px-5 py-3 bg-canvas border-b border-line">
+            <span className="text-base">⚠️</span>
+            <h3 className="font-semibold text-ink text-sm">注意事项</h3>
+          </div>
+          <div className="p-5">
+            <p className="text-[15px] text-ink leading-relaxed">{quickstart.notes}</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ---------- 历史版本 Tab ---------- */
+
 function VersionsTab({
   versions,
   isLoading,
@@ -198,6 +323,8 @@ function VersionsTab({
   );
 }
 
+/* ---------- 文件清单 ---------- */
+
 function FileList({ files }: { files?: SkillFile[] }) {
   if (!files || files.length === 0) return null;
   return (
@@ -227,8 +354,10 @@ function FileList({ files }: { files?: SkillFile[] }) {
   );
 }
 
+/* ---------- 安装提示卡 ---------- */
+
 function PromptCard({ displayName }: { displayName: string }) {
-  const prompt = `请先检查是否已安装 ${displayName} ,若未安装,请根据 211.93.0.206:38090/api/install/skill-expansion.md ，安装 ${displayName} 技能。`;
+  const prompt = `请先检查是否已安装${displayName},若未安装,请根据https://skills.ospreyai.cn/api/install/osprey-skill-market.md，安装${displayName}技能。`;
   const [copied, setCopied] = useState(false);
 
   const onCopy = async () => {
@@ -257,16 +386,15 @@ function PromptCard({ displayName }: { displayName: string }) {
   );
 }
 
-// 复制到剪贴板:优先 Clipboard API,HTTP 环境下 fallback 到 execCommand
+/* ---------- 复制工具 ---------- */
+
 async function copyText(text: string): Promise<boolean> {
   try {
     if (navigator.clipboard && window.isSecureContext) {
       await navigator.clipboard.writeText(text);
       return true;
     }
-  } catch {
-    // 落到 fallback
-  }
+  } catch { /* fallback */ }
   try {
     const ta = document.createElement("textarea");
     ta.value = text;
@@ -283,6 +411,8 @@ async function copyText(text: string): Promise<boolean> {
   }
 }
 
+/* ---------- 下载卡 ---------- */
+
 function DownloadCard({
   slug,
   onDownloaded,
@@ -294,7 +424,6 @@ function DownloadCard({
   const downloadUrl = `${BASE}/v1/skills/${encodeURIComponent(slug)}/download`;
 
   const onClick = () => {
-    // 浏览器原生 <a download> 触发下载;延迟刷新让后端 +1 落库
     setBusy(true);
     setTimeout(() => {
       onDownloaded();
@@ -324,13 +453,14 @@ function DownloadCard({
   );
 }
 
+/* ---------- 工具函数 ---------- */
+
 function formatSize(bytes: number): string {
   if (bytes < 1024) return `${bytes}B`;
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)}K`;
   return `${(bytes / 1024 / 1024).toFixed(1)}M`;
 }
 
-// 剥掉 SKILL.md 开头的 YAML front matter(---\n...\n---),避免渲染成杂乱元数据
 function stripFrontMatter(md: string): string {
   return md.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "").trimStart();
 }

@@ -7,15 +7,46 @@
   "icon": "🔄",
   "category": "code_debug",
   "runtime_type": "local",
-  "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
+  "owner": {
+    "name": "official",
+    "type": "official",
+    "verified": true,
+    "avatar": "🏢",
+    "url": ""
+  },
   "readme": "SKILL.md",
   "files": [],
   "env_vars": [],
   "dependencies": [],
-  "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["local-execution"] },
+  "platform": {
+    "host": "openclaw",
+    "min_version": "1.0",
+    "capabilities": [
+      "local-execution"
+    ]
+  },
   "changelog": [
-    { "version": "1.0.0", "date": "2026-01-01", "changes": ["初始版本"], "type": "MINOR" }
+    {
+      "version": "1.0.0",
+      "date": "2026-01-01",
+      "changes": [
+        "初始版本"
+      ],
+      "type": "MINOR"
+    }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-01-01T00:00:00Z"
+  "updated_at": "2026-01-01T00:00:00Z",
+  "quickstart": {
+    "overview": "记录错误和学习，促进AI持续改进",
+    "scenarios": [
+      "用户纠正AI输出时记录校正",
+      "命令或操作失败时记录错误",
+      "发现更好的方法或最佳实践时记录",
+      "API或外部工具失败时记录集成细节",
+      "知识过时时记录知识缺口"
+    ],
+    "example": "请将刚才的失败记录到.learnings/ERRORS.md，并注明是命令执行错误。",
+    "notes": "需预先创建.learnings目录及日志文件，避免记录重复条目。"
+  }
 }

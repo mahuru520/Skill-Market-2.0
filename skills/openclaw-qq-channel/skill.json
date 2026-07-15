@@ -7,18 +7,59 @@
   "icon": "🐧",
   "category": "mail_communication",
   "runtime_type": "local",
-  "owner": { "name": "official", "type": "official", "verified": true, "avatar": "🏢", "url": "" },
+  "owner": {
+    "name": "official",
+    "type": "official",
+    "verified": true,
+    "avatar": "🏢",
+    "url": ""
+  },
   "readme": "SKILL.md",
   "files": [],
   "env_vars": [
-    { "key": "QQ_APP_ID", "description": "QQ 机器人 AppID", "required": true, "source": "QQ 开放平台", "example": "qq-xxx" },
-    { "key": "QQ_APP_SECRET", "description": "QQ 机器人 AppSecret", "required": true, "source": "QQ 开放平台", "example": "secret 占位" }
+    {
+      "key": "QQ_APP_ID",
+      "description": "QQ 机器人 AppID",
+      "required": true,
+      "source": "QQ 开放平台",
+      "example": "qq-xxx"
+    },
+    {
+      "key": "QQ_APP_SECRET",
+      "description": "QQ 机器人 AppSecret",
+      "required": true,
+      "source": "QQ 开放平台",
+      "example": "secret 占位"
+    }
   ],
   "dependencies": [],
-  "platform": { "host": "openclaw", "min_version": "1.0", "capabilities": ["channel-qq"] },
+  "platform": {
+    "host": "openclaw",
+    "min_version": "1.0",
+    "capabilities": [
+      "channel-qq"
+    ]
+  },
   "changelog": [
-    { "version": "1.0.0", "date": "2026-01-01", "changes": ["初始版本"], "type": "MINOR" }
+    {
+      "version": "1.0.0",
+      "date": "2026-01-01",
+      "changes": [
+        "初始版本"
+      ],
+      "type": "MINOR"
+    }
   ],
   "created_at": "2026-01-01T00:00:00Z",
-  "updated_at": "2026-01-01T00:00:00Z"
+  "updated_at": "2026-01-01T00:00:00Z",
+  "quickstart": {
+    "overview": "将OpenClaw机器人接入QQ平台",
+    "scenarios": [
+      "在QQ开放平台创建机器人",
+      "在OpenClaw安装QQBot插件并配置凭证",
+      "验证QQ端与OpenClaw双向通信"
+    ],
+    "example": "帮我在OpenClaw上配置QQ机器人，让QQ能回复AI消息。",
+    "notes": "确保AppID/AppSecret正确且网关已重启。"
+  }
 }
