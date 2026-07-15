@@ -13,6 +13,7 @@ import {
   BILLING_COLOR,
   CATEGORY_LABEL,
 } from "../lib/labels";
+import { getManual } from "../lib/manuals";
 import type { SkillFile, ChangelogEntry, QuickstartData } from "@skill-market/shared";
 
 /* ================================================================ */
@@ -21,7 +22,7 @@ import type { SkillFile, ChangelogEntry, QuickstartData } from "@skill-market/sh
 
 export function SkillDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const [tab, setTab] = useState<"overview" | "quickstart" | "versions">("overview");
+  const [tab, setTab] = useState<"overview" | "quickstart" | "versions" | "manual">("overview");
   const queryClient = useQueryClient();
 
   const detailQ = useQuery({
@@ -90,6 +91,11 @@ export function SkillDetail() {
             <TabButton active={tab === "versions"} onClick={() => setTab("versions")}>
               历史版本
             </TabButton>
+            {getManual(s.slug) && (
+              <TabButton active={tab === "manual"} onClick={() => setTab("manual")}>
+                用户手册
+              </TabButton>
+            )}
           </div>
 
           {tab === "overview" ? (
@@ -100,6 +106,8 @@ export function SkillDetail() {
               displayName={s.displayName}
               description={s.description}
             />
+          ) : tab === "manual" ? (
+            <ManualTab slug={s.slug} />
           ) : (
             <VersionsTab
               versions={versionsQ.data ?? []}
@@ -320,6 +328,18 @@ function VersionsTab({
         </li>
       ))}
     </ol>
+  );
+}
+
+/* ---------- 用户手册 Tab ---------- */
+
+function ManualTab({ slug }: { slug: string }) {
+  return (
+    <article className={PROSE}>
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        {stripFrontMatter(getManual(slug) || "")}
+      </ReactMarkdown>
+    </article>
   );
 }
 

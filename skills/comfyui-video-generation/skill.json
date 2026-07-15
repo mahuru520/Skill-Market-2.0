@@ -16,6 +16,7 @@
   },
   "readme": "SKILL.md",
   "files": [],
+  "hot": true,
   "env_vars": [
     {
       "key": "GW",
