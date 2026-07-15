@@ -228,7 +228,7 @@ function FileList({ files }: { files?: SkillFile[] }) {
 }
 
 function PromptCard({ displayName }: { displayName: string }) {
-  const prompt = `请先检查是否已安装${displayName},若未安装,请根据技能 skill-expansion 安装${displayName}技能。`;
+  const prompt = `请先检查是否已安装 ${displayName} ,若未安装,请根据 192.168.4.2:38090/api/install/skill-expansion.md ，安装 ${displayName} 技能。`;
   const [copied, setCopied] = useState(false);
 
   const onCopy = async () => {
