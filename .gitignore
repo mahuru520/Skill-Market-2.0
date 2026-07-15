@@ -24,3 +24,5 @@ _cat.json
 *.log
 coverage
 .vite
+
+/docs
