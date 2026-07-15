@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/topup-redirect",
+  "name": "topup-redirect",
+  "display_name": "Topup Redirect",
+  "description": "充值跳转技能。当用户在对话中表达充值意图时触发，例如：\"我要充值\"、\"余额不够想充钱\"、\"怎么充值\"、\"帮我充钱\"、\"充值100\"、\"余额不足\"等任何提及充值、余额、充值的表述。触发后直接跳转到充值页面。",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "initialization",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-15",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-15T02:34:13.578Z",
+  "updated_at": "2026-07-15T02:34:13.578Z"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/balance-checker",
+  "name": "balance-checker",
+  "display_name": "Balance Checker",
+  "description": "查询供应商账户余额，支持阈值告警与自动充值提醒。当用户询问余额、检查账户状态、余额不足、需要充值时触发。也用于在执行高消耗操作前检查余额是否充足。",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "initialization",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-15",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-15T02:34:13.419Z",
+  "updated_at": "2026-07-15T02:34:13.419Z"
+}

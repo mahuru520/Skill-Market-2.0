@@ -197,6 +197,37 @@ export class SkillsService {
     archive.finalize();
   }
 
+  /**
+   * 对标 skillhub.cn/install/:slug.md — 返回 SKILL.md 触发浏览器下载。
+   * Content-Type: text/plain, Content-Disposition: attachment。
+   * installCount +1。
+   */
+  async serveSkillMd(slug: string, res: Response): Promise<void> {
+    const skill = await this.prisma.skill.findUnique({
+      where: { slug },
+      select: { slug: true },
+    });
+    if (!skill) throw new NotFoundException(`skill not found: ${slug}`);
+
+    const skillsDir = process.env.SKILLS_DIR ?? "";
+    const filePath = join(skillsDir, slug, "SKILL.md");
+    if (!skillsDir || !existsSync(filePath)) {
+      throw new NotFoundException(`SKILL.md not found for: ${slug}`);
+    }
+
+    // 原子自增下载数(不阻塞响应,失败仅日志)
+    this.prisma.skill
+      .update({ where: { slug }, data: { installCount: { increment: 1 } } })
+      .catch(() => undefined);
+
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    res.setHeader(
+      "Content-Disposition",
+      `attachment;filename="${encodeURIComponent(slug)}.md"`,
+    );
+    createReadStream(filePath).pipe(res);
+  }
+
   async versions(slug: string): Promise<ChangelogEntry[]> {
     const skill = await this.prisma.skill.findUnique({
       where: { slug },

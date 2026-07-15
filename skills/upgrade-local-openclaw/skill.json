@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/upgrade-local-openclaw",
+  "name": "upgrade-local-openclaw",
+  "display_name": "升级网关",
+  "description": "升级网关 / 升级 OpenClaw 的标准技能。触发条件：(1) 用户说‘升级网关’、‘升级 OpenClaw’、‘更新 gateway’；(2) 用户希望优先升级当前项目目录中的本地 openclaw，而不是系统全局版本；(3) 需要判断应该升级本地依赖还是全局安装。默认策略：优先升级当前工作目录 app/core 下的本地 openclaw，仅当用户明确要求‘全局升级’、‘系统版本升级’时才处理全局安装。",
+  "version": "1.0.0",
+  "icon": "🦞",
+  "category": "initialization",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-15",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-15T02:34:13.661Z",
+  "updated_at": "2026-07-15T02:34:13.661Z"
+}

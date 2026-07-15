@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/language-learning",
+  "name": "language-learning",
+  "display_name": "Language Learning",
+  "description": "AI language tutor for learning ANY language through conversation, vocab drills, grammar lessons, flashcards, and immersive practice. Use when the user wants to: learn a new language, practice vocabulary, study grammar, do flashcard drills, translate phrases, practice conversation, prepare for travel, learn slang/idioms, or improve pronunciation. Supports ALL languages including Spanish, French, German, Japanese, Chinese (Mandarin/Cantonese), Korean, Arabic, Hindi, Bengali/Bangla, Portuguese, Russian, Italian, Turkish, Vietnamese, Thai, Swahili, Hebrew, Polish, Dutch, Greek, and 100+ more.",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-01-30",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-01-30T00:46:17.182Z",
+  "updated_at": "2026-07-15T02:34:13.523Z"
+}

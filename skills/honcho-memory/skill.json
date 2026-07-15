@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/honcho-memory",
+  "name": "honcho-memory",
+  "display_name": "用户辩证画像管理",
+  "description": "Honcho 用户辩证画像管理。当用户提到\"记忆管理\"、\"用户画像\"、\"了解我\"、\"更新画像\"、\"HONCHO\"、\"Honcho\"、\"用户建模\"时触发。也用于每次对话结束时或心跳时自动更新 HONCHO.md。实现类似 Hermes Agent 的六大维度用户建模：技术水平、交互节奏、沟通风格、目标取向、情绪基调、矛盾偏好。",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "initialization",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-15",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-15T02:34:13.472Z",
+  "updated_at": "2026-07-15T02:34:13.472Z"
+}

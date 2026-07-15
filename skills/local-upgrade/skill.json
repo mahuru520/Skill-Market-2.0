@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/local-upgrade",
+  "name": "local-upgrade",
+  "display_name": "升级本地项目目录中的",
+  "description": "升级本地项目目录中的 OpenClaw 网关（非全局安装）。当用户要求升级当前项目目录的网关、升级本地 openclaw、或升级非全局网关时使用。注意：不是升级系统全局安装的 OpenClaw。",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "initialization",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-15",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-15T02:34:13.524Z",
+  "updated_at": "2026-07-15T02:34:13.524Z"
+}

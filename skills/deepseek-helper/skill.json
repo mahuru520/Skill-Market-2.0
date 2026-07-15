@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/deepseek-helper",
+  "name": "deepseek-helper",
+  "display_name": "Deepseek Helper",
+  "description": "DeepSeek API 助手 - 编程辅助、模型选择、API调用指南、定价信息",
+  "version": "1.0.0",
+  "icon": "🤖",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-15",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-15T02:34:13.452Z",
+  "updated_at": "2026-07-15T02:34:13.452Z"
+}

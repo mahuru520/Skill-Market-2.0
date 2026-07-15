@@ -70,6 +70,16 @@ export class SkillsController {
     return { code: 0, data, message: "ok" };
   }
 
+  // 对标 skillhub.cn/install/:slug.md — 触发浏览器下载 SKILL.md
+  // installCount +1
+  @Get("install/:slug.md")
+  async installMarkdown(
+    @Param("slug") slug: string,
+    @Res() res: Response,
+  ): Promise<void> {
+    await this.service.serveSkillMd(slug, res);
+  }
+
   // 下载技能整目录 zip,同时 installCount +1。
   // 用 GET 让前端 <a download> 直接触发浏览器原生下载。
   @Get("v1/skills/:slug/download")

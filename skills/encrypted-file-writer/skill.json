@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/encrypted-file-writer",
+  "name": "encrypted-file-writer",
+  "display_name": "写入内容到本地加密",
+  "description": "写入内容到本地加密/受保护的文件，支持企业安全策略环境。支持文本文件、Word 文档 (.docx)、Excel 表格 (.xlsx) 等 80+ 种格式，通过正确的编码处理避免乱码问题。",
+  "version": "1.1.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.1.0",
+      "date": "2026-03-09",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-09T06:59:38.051Z",
+  "updated_at": "2026-07-15T02:34:13.464Z"
+}

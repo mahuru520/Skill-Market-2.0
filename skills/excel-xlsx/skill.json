@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/excel-xlsx",
+  "name": "excel-xlsx",
+  "display_name": "Excel Xlsx",
+  "description": "Create, inspect, and edit Microsoft Excel workbooks and XLSX files with reliable formulas, dates, types, formatting, recalculation, and template preservation. Use when (1) the task is about Excel, `.xlsx`, `.xlsm`, `.xls`, `.csv`, or `.tsv`; (2) formulas, formatting, workbook structure, or compatibility matter; (3) the file must stay reliable after edits.",
+  "version": "1.0.2",
+  "icon": "📗",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.2",
+      "date": "2026-03-11",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-11T15:32:46.499Z",
+  "updated_at": "2026-07-15T02:34:13.466Z"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/ui-audit",
+  "name": "ui-audit",
+  "display_name": "Ui Audit",
+  "description": "AI skill for automated UI audits. Evaluate interfaces against proven UX principles for visual hierarchy, accessibility, cognitive load, navigation, and more. Based on Making UX Decisions by Tommy Geoco.",
+  "version": "1.0.1",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.1",
+      "date": "2026-01-18",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-01-18T01:53:31.826Z",
+  "updated_at": "2026-07-15T02:34:13.652Z"
+}

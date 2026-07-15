@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/html-ppt-generator",
+  "name": "html-ppt-generator",
+  "display_name": "会自己设计",
+  "description": "会自己设计PPT的智能报告技能，内置47套PPT模板（商务、科技、创意、学术、政府、金融等全场景覆盖），根据主题风格自由选配模板并自主设计，将任意输入拆解为5-15页精美HTML报告，每页严格1017×720px对齐PPT画布。当用户说\"生成报告\"、\"分析内容做成页面\"、\"做成HTML\"、\"内容可视化\"时立即使用，无需确认直接生成。",
+  "version": "1.0.1",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.1",
+      "date": "2026-03-16",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-16T08:55:14.045Z",
+  "updated_at": "2026-07-15T02:34:13.479Z"
+}

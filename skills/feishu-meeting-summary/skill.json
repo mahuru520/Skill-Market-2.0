@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/feishu-meeting-summary",
+  "name": "feishu-meeting-summary",
+  "display_name": "飞书会议总结技能",
+  "description": "飞书会议总结技能 - 读取飞书会议纪要，生成结构化总结，沉淀知识，支持搜索",
+  "version": "1.0.4",
+  "icon": "📦",
+  "category": "mail_communication",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.4",
+      "date": "2026-03-13",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-13T07:33:02.668Z",
+  "updated_at": "2026-07-15T02:34:13.469Z"
+}

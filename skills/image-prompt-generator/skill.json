@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/image-prompt-generator",
+  "name": "image-prompt-generator",
+  "display_name": "基于五层拆解法的",
+  "description": "基于五层拆解法的AI图片提示词生成器。将模糊的创意想法转化为结构严谨、可执行的图像生成规格书，支持多种风格预设和目标工具适配。",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "image_video",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-03-11",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-11T05:22:50.255Z",
+  "updated_at": "2026-07-15T02:34:13.520Z"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/openclaw-memory-system",
+  "name": "openclaw-memory-system",
+  "display_name": "记忆系统全套配置技能",
+  "description": "OpenClaw 记忆系统全套配置技能。包含向量搜索（memory_search）、梦境自动记忆（dreaming）、用户画像（Honcho）三大模块的安装、配置、调优和故障排查。当用户说\"配置记忆系统\"、\"开启梦境\"、\"设置用户画像\"、\"配置向量搜索\"、\"memory_search 不工作\"时触发。",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "initialization",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-15",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-07-15T02:34:13.539Z",
+  "updated_at": "2026-07-15T02:34:13.539Z"
+}

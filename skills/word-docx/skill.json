@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/word-docx",
+  "name": "word-docx",
+  "display_name": "Word Docx",
+  "description": "Create, inspect, and edit Microsoft Word documents and DOCX files with reliable styles, numbering, tracked changes, tables, sections, and compatibility checks. Use when (1) the task is about Word or `.docx`; (2) the file includes tracked changes, comments, fields, tables, templates, or page layout constraints; (3) the document must survive round-trip editing without formatting drift.",
+  "version": "1.0.2",
+  "icon": "📘",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.2",
+      "date": "2026-03-11",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-11T15:31:36.816Z",
+  "updated_at": "2026-07-15T02:34:13.672Z"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "openclaw/webpage-to-pdf",
+  "name": "webpage-to-pdf",
+  "display_name": "Webpage To Pdf",
+  "description": "Convert a web page to PDF, especially web-based slide decks and presentations (reveal.js, impress.js, custom JS slideshows, scroll-based decks). Use when the user wants to save a website as PDF, capture slides to PDF, convert an online presentation to PDF, export a web deck, or screenshot a web page into a document. Also use when the user pastes a URL and says \"turn this into a PDF\", \"save as PDF\", \"export this\", or \"make a PDF of this\".",
+  "version": "1.0.0",
+  "icon": "📦",
+  "category": "system_config",
+  "runtime_type": "local",
+  "billing": "free",
+  "owner": {
+    "name": "openclaw",
+    "type": "community",
+    "verified": false
+  },
+  "readme": "SKILL.md",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-03-19",
+      "changes": [
+        "从 OpenClaw 技能市场导入"
+      ],
+      "type": "MINOR"
+    }
+  ],
+  "created_at": "2026-03-19T22:31:19.107Z",
+  "updated_at": "2026-07-15T02:34:13.669Z"
+}
