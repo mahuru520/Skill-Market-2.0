@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-01-22T18:16:57.562Z",
-  "updated_at": "2026-07-15T12:56:35.426Z"
+  "updated_at": "2026-07-15T12:56:35.426Z",
+  "quickstart": {
+    "overview": "从JSON数据生成PDF发票",
+    "scenarios": [
+      "提供JSON数据即时生成发票",
+      "批量处理多个JSON发票文件",
+      "通过管道传入JSON快速生成PDF"
+    ],
+    "example": "请用我的invoice-data.json生成一张PDF发票",
+    "notes": "需设置INVOICE_DIR环境变量及安装依赖"
+  }
 }

@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-01-04T16:49:22.143Z",
-  "updated_at": "2026-07-15T12:56:35.439Z"
+  "updated_at": "2026-07-15T12:56:35.439Z",
+  "quickstart": {
+    "overview": "使用obsidian-cli管理Obsidian笔记库",
+    "scenarios": [
+      "设置默认vault",
+      "搜索笔记内容",
+      "移动并自动更新链接"
+    ],
+    "example": "请将“日记/2025-01-01”移动到“归档/2025-01-01”并更新所有相关链接。",
+    "notes": "务必从obsidian.json读取活动vault，禁止硬编码路径。"
+  }
 }

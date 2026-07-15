@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-02-21T10:53:57.453Z",
-  "updated_at": "2026-07-15T12:56:35.467Z"
+  "updated_at": "2026-07-15T12:56:35.467Z",
+  "quickstart": {
+    "overview": "大幅降低OpenClaw API token成本",
+    "scenarios": [
+      "将默认模型路由到成本更低的Haiku",
+      "配置心跳服务到免费本地大模型",
+      "利用缓存重用提示以降低90%花费"
+    ],
+    "example": "帮我安装token-optimizer并分析我当前的配置，我想把API开销降下来。",
+    "notes": "默认仅预览，加--apply才生效，配置自动备份在~/.openclaw/backups/"
+  }
 }

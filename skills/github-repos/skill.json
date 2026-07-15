@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-06-09T07:08:17.363Z",
-  "updated_at": "2026-07-15T12:56:35.424Z"
+  "updated_at": "2026-07-15T12:56:35.424Z",
+  "quickstart": {
+    "overview": "通过API管理GitHub仓库和协作",
+    "scenarios": [
+      "管理个人或组织的代码仓库",
+      "创建和处理Issue、Pull Request",
+      "触发和管理GitHub Actions工作流"
+    ],
+    "example": "列出我的GitHub仓库",
+    "notes": "需先通过ClawLink连接GitHub账号"
+  }
 }

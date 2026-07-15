@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-03-20T02:19:16.496Z",
-  "updated_at": "2026-07-15T12:56:35.441Z"
+  "updated_at": "2026-07-15T12:56:35.441Z",
+  "quickstart": {
+    "overview": "根据JSON配置一键生成前后端项目",
+    "scenarios": [
+      "快速搭建RBAC权限管理系统",
+      "批量生成业务实体CRUD代码",
+      "配置驱动式项目脚手架创建"
+    ],
+    "example": "使用optimized-one-click-project创建一个用户信息管理系统",
+    "notes": "需预装MySQL、Java和Node环境，配置文件参数必须正确"
+  }
 }

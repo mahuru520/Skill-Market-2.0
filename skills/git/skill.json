@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-03-11T19:03:15.217Z",
-  "updated_at": "2026-07-15T12:56:35.421Z"
+  "updated_at": "2026-07-15T12:56:35.421Z",
+  "quickstart": {
+    "overview": "Git版本控制与团队协作指南",
+    "scenarios": [
+      "使用Git进行版本控制",
+      "团队协作开发与分支管理",
+      "解决合并冲突与历史恢复"
+    ],
+    "example": "请帮我把feature/login分支变基到main上并解决冲突。",
+    "notes": "切勿强制推送至共享分支，使用--force-with-lease替代。"
+  }
 }

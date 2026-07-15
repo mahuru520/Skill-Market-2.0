@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-02-18T07:59:22.688Z",
-  "updated_at": "2026-07-15T12:56:35.460Z"
+  "updated_at": "2026-07-15T12:56:35.460Z",
+  "quickstart": {
+    "overview": "将JSON数据渲染为PNG表格图片",
+    "scenarios": [
+      "在Discord分享结构化数据表格",
+      "快速生成美观的数据截图",
+      "替代无法对齐的ASCII表格"
+    ],
+    "example": "帮我把这组学生成绩数据生成暗色主题的表格图片：Alice 95分、Bob 87分",
+    "notes": "需先安装npm依赖；用heredoc或文件传入数据避免shell转义问题"
+  }
 }

@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-06-09T07:08:32.777Z",
-  "updated_at": "2026-07-15T12:56:35.425Z"
+  "updated_at": "2026-07-15T12:56:35.425Z",
+  "quickstart": {
+    "overview": "通过OAuth连接GitLab API管理仓库",
+    "scenarios": [
+      "列出项目与仓库信息",
+      "管理 Issues 和合并请求",
+      "查看提交、分支与流水线"
+    ],
+    "example": "帮我列出我的所有 GitLab 项目",
+    "notes": "需安装ClawLink插件并连接GitLab账户"
+  }
 }

@@ -25,5 +25,15 @@
     }
   ],
   "created_at": "2026-06-19T06:09:33.931Z",
-  "updated_at": "2026-07-15T12:56:35.362Z"
+  "updated_at": "2026-07-15T12:56:35.362Z",
+  "quickstart": {
+    "overview": "AI浏览器自动化CLI工具",
+    "scenarios": [
+      "浏览器自动化",
+      "Electron桌面应用操作",
+      "Slack工作区自动化"
+    ],
+    "example": "请使用 agent-browser 打开 example.com 并提取页面文本。",
+    "notes": "需先运行 skills get core 获取完整指南"
+  }
 }
