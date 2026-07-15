@@ -10,8 +10,7 @@ services:
     volumes:
       - ./skills:/app/skills:ro
       - skill_market_data:/app/data
-    ports:
-      - "3001:3001"
+    # API 不对外暴露，仅 Docker 内部网络通信
     restart: unless-stopped
 
   web:
@@ -19,7 +18,7 @@ services:
       context: .
       dockerfile: apps/web/Dockerfile
     ports:
-      - "${WEB_PUBLIC_PORT:-8080}:80"
+      - "127.0.0.1:${WEB_PUBLIC_PORT:-38090}:80"
     depends_on:
       - api
     restart: unless-stopped
