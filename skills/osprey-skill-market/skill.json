@@ -14,6 +14,7 @@
     "verified": false
   },
   "readme": "SKILL.md",
+  "hot": true,
   "changelog": [
     {
       "version": "1.0.0",
