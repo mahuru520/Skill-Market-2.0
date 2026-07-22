@@ -1,1 +1,0 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/api/client.ts","./src/api/skills.ts","./src/components/layout.tsx","./src/components/skillcard.tsx","./src/lib/labels.ts","./src/pages/home.tsx","./src/pages/skilldetail.tsx","./src/pages/skilllist.tsx"],"version":"5.9.3"}

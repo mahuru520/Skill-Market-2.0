@@ -25,4 +25,7 @@ _cat.json
 coverage
 .vite
 
+# TypeScript 增量编译缓存
+*.tsbuildinfo
+
 skill-market-guide.md
