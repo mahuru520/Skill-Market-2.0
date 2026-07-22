@@ -3,8 +3,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 import { fetchSkills, fetchCategories } from "../api/skills";
 import { SkillCard } from "../components/SkillCard";
-import { SORT_OPTIONS, RUNTIME_LABEL } from "../lib/labels";
-import type { SortBy, RuntimeType, Billing } from "@skill-market/shared";
+import { SORT_OPTIONS, RUNTIME_LABEL, SOURCE_LABEL } from "../lib/labels";
+import type { SortBy, RuntimeType, Billing, Source } from "@skill-market/shared";
 
 // 一页全量展示,不分页
 const PAGE_SIZE = 200;
@@ -17,9 +17,10 @@ export function SkillList() {
   const category = searchParams.get("category") || "";
   const runtimeType = (searchParams.get("runtimeType") as RuntimeType) || "";
   const billing = (searchParams.get("billing") as Billing) || "";
+  const source = (searchParams.get("source") as Source) || "";
 
   const { data, isLoading } = useQuery({
-    queryKey: ["skills", { sortBy, keyword, category, runtimeType, billing }],
+    queryKey: ["skills", { sortBy, keyword, category, runtimeType, billing, source }],
     queryFn: () =>
       fetchSkills({
         page: 1,
@@ -29,6 +30,7 @@ export function SkillList() {
         category: category || undefined,
         runtimeType: runtimeType || undefined,
         billing: billing || undefined,
+        source: source || undefined,
       }),
   });
 
@@ -142,6 +144,22 @@ export function SkillList() {
               onClick={() => update("category", c.key)}
             >
               {c.name}
+            </Chip>
+          ))}
+        </FilterRow>
+
+        {/* 来源筛选 */}
+        <FilterRow label="来源">
+          <Chip active={!source} onClick={() => update("source", "")}>
+            全部
+          </Chip>
+          {(Object.keys(SOURCE_LABEL) as Source[]).map((src) => (
+            <Chip
+              key={src}
+              active={source === src}
+              onClick={() => update("source", src)}
+            >
+              {SOURCE_LABEL[src]}
             </Chip>
           ))}
         </FilterRow>

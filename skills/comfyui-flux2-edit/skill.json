@@ -5,7 +5,8 @@
   "description": "通过公网网关使用 ComfyUI FLUX.2-klein-9b-kv 图生图/局部编辑，上传图片+写 prompt 即可生成，支持换装、换背景、局部修改。",
   "version": "1.0.0",
   "icon": "🎨",
-  "category": "image_video",
+  "category": "comfyui",
+  "source": "osprey",
   "runtime_type": "gateway_migrated_api",
   "billing": "token",
   "owner": {

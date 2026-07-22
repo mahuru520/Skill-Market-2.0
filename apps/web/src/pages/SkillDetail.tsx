@@ -12,6 +12,8 @@ import {
   BILLING_LABEL,
   BILLING_COLOR,
   CATEGORY_LABEL,
+  SOURCE_LABEL,
+  SOURCE_COLOR,
 } from "../lib/labels";
 import { getManual } from "../lib/manuals";
 import type { SkillFile, ChangelogEntry, QuickstartData } from "@skill-market/shared";
@@ -74,6 +76,11 @@ export function SkillDetail() {
             <Badge className="bg-canvas text-ink-soft border border-line">
               {CATEGORY_LABEL[s.category] ?? s.category}
             </Badge>
+            {SOURCE_LABEL[s.source] && (
+              <Badge className={SOURCE_COLOR[s.source]}>
+                {SOURCE_LABEL[s.source]}
+              </Badge>
+            )}
           </div>
         </div>
       </div>
@@ -127,8 +134,8 @@ export function SkillDetail() {
               <InfoRow label="分类" value={CATEGORY_LABEL[s.category] ?? s.category} />
               <InfoRow label="运行方式" value={RUNTIME_LABEL[s.runtimeType] ?? s.runtimeType} />
               <InfoRow label="计费" value={BILLING_LABEL[s.billing] ?? s.billing} />
+              <InfoRow label="来源" value={SOURCE_LABEL[s.source] ?? s.ownerName} />
               <InfoRow label="版本" value={s.version} />
-              <InfoRow label="来源" value={s.ownerName} />
               <InfoRow
                 label="更新时间"
                 value={new Date(s.updatedAt).toLocaleDateString("zh-CN")}

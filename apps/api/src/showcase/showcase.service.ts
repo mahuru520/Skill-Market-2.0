@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { PrismaService } from "../prisma/prisma.service";
-import type { SkillListItem, RuntimeType, Billing } from "@skill-market/shared";
+import type { SkillListItem, RuntimeType, Billing, Source } from "@skill-market/shared";
 
 @Injectable()
 export class ShowcaseService {
@@ -50,7 +50,7 @@ export class ShowcaseService {
       category: r.category,
       runtimeType: r.runtimeType as RuntimeType,
       billing: r.billing as Billing,
-      source: r.source,
+      source: r.source as Source,
       ownerName: r.ownerName,
       hot: r.hot,
       installCount: r.installCount,

@@ -5,7 +5,8 @@
   "description": "调用 ComfyUI Wan 2.2 Fun Inpaint 工作流,用首帧+尾帧两张图片生成过渡视频并下载 mp4。当用户请求首尾帧过渡、首尾图生视频、Fun Inpaint 视频时触发。",
   "version": "1.0.0",
   "icon": "🎞️",
-  "category": "image_video",
+  "category": "comfyui",
+  "source": "osprey",
   "runtime_type": "gateway_migrated_api",
   "owner": {
     "name": "official",

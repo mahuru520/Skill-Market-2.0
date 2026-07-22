@@ -5,6 +5,8 @@ import {
   RUNTIME_COLOR,
   BILLING_LABEL,
   BILLING_COLOR,
+  SOURCE_LABEL,
+  SOURCE_COLOR,
 } from "../lib/labels";
 
 export function SkillCard({ skill }: { skill: SkillListItem }) {
@@ -31,6 +33,11 @@ export function SkillCard({ skill }: { skill: SkillListItem }) {
         <Badge className={BILLING_COLOR[skill.billing]}>
           {BILLING_LABEL[skill.billing] ?? skill.billing}
         </Badge>
+        {SOURCE_LABEL[skill.source] && (
+          <Badge className={SOURCE_COLOR[skill.source]}>
+            {SOURCE_LABEL[skill.source]}
+          </Badge>
+        )}
         <span className="text-xs text-ink-mute ml-auto">
           ⬇ {skill.installCount}
         </span>

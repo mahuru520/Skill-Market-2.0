@@ -9,6 +9,7 @@ interface SeedCategory {
 }
 
 const SEED: SeedCategory[] = [
+  { key: "comfyui", name: "ComfyUI", nameEn: "ComfyUI", sortOrder: 15 },
   { key: "image_video", name: "图像视频", nameEn: "Image & Video", sortOrder: 10 },
   { key: "document", name: "文档处理", nameEn: "Document", sortOrder: 20 },
   { key: "code_debug", name: "代码调试", nameEn: "Code & Debug", sortOrder: 30 },
@@ -23,10 +24,13 @@ export class CategoriesService implements OnModuleInit {
   constructor(private readonly prisma: PrismaService) {}
 
   async onModuleInit() {
-    const count = await this.prisma.category.count();
-    if (count === 0) {
-      this.logger.log("seeding categories...");
-      await this.prisma.category.createMany({ data: SEED });
+    // 幂等补齐:每次启动确保 SEED 中定义的分类都存在(新增分类如 comfyui 也能落库)
+    for (const c of SEED) {
+      await this.prisma.category.upsert({
+        where: { key: c.key },
+        create: { key: c.key, name: c.name, nameEn: c.nameEn, sortOrder: c.sortOrder },
+        update: { name: c.name, nameEn: c.nameEn, sortOrder: c.sortOrder },
+      });
     }
   }
 

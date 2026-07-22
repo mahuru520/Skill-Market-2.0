@@ -1,9 +1,11 @@
 // 共享 TS 类型:前后端通用的 Skill DTO 与枚举
 // 字段对齐 skills/*/skill.json 真实结构
 
-export type RuntimeType = "gateway_migrated_api" | "external_api" | "local";
+export type RuntimeType = "gateway_migrated_api" | "gateway_async_api" | "external_api" | "local";
 
 export type Billing = "free" | "paid";
+
+export type Source = "clawhub" | "osprey";
 
 export type SortBy = "score" | "downloads" | "stars" | "rank" | "updated_at";
 
@@ -76,7 +78,7 @@ export interface SkillListItem {
   category: string;
   runtimeType: RuntimeType;
   billing: Billing;
-  source: string;
+  source: Source;
   ownerName: string;
   hot: boolean;
   installCount: number;
@@ -103,7 +105,7 @@ export interface SkillDetail {
   icon: string;
   category: string;
   runtimeType: RuntimeType;
-  source: string;
+  source: Source;
   ownerName: string;
   ownerVerified: boolean;
   readmePath: string;

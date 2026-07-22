@@ -5,7 +5,8 @@
   "description": "调用 ComfyUI 工作流生成视频并下载 mp4。当用户请求图生视频、生成视频时触发。",
   "version": "2.0.0",
   "icon": "🎬",
-  "category": "image_video",
+  "category": "comfyui",
+  "source": "osprey",
   "runtime_type": "gateway_migrated_api",
   "owner": {
     "name": "official",

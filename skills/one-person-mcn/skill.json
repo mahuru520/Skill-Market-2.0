@@ -6,6 +6,7 @@
   "version": "1.0.3",
   "icon": "📦",
   "category": "mail_communication",
+  "source": "clawhub",
   "runtime_type": "local",
   "billing": "free",
   "owner": {

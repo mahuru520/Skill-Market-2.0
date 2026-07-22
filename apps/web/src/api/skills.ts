@@ -9,6 +9,7 @@ import type {
   Order,
   RuntimeType,
   Billing,
+  Source,
 } from "@skill-market/shared";
 
 export function fetchSkills(params: {
@@ -20,6 +21,7 @@ export function fetchSkills(params: {
   category?: string;
   runtimeType?: RuntimeType;
   billing?: Billing;
+  source?: Source;
 }): Promise<Paginated<SkillListItem>> {
   const q = new URLSearchParams();
   if (params.page) q.set("page", String(params.page));
@@ -30,6 +32,7 @@ export function fetchSkills(params: {
   if (params.category) q.set("category", params.category);
   if (params.runtimeType) q.set("runtimeType", params.runtimeType);
   if (params.billing) q.set("billing", params.billing);
+  if (params.source) q.set("source", params.source);
   return apiGet<Paginated<SkillListItem>>(`/skills?${q.toString()}`);
 }
 

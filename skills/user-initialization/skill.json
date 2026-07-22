@@ -6,6 +6,7 @@
   "version": "2.0.0",
   "icon": "👤",
   "category": "initialization",
+  "source": "osprey",
   "runtime_type": "local",
   "owner": {
     "name": "official",

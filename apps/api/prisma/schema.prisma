@@ -50,6 +50,7 @@ model Skill {
   @@index([category])
   @@index([runtimeType])
   @@index([billing])
+  @@index([source])
   @@index([score(sort: Desc)])
 }
 

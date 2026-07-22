@@ -5,7 +5,8 @@
   "description": "通过公网网关使用 Qwen-Image-Edit-2511 模型编辑图片（换装、改背景、物体替换等）。当用户要求编辑图片、改图、换衣服、改背景、P掉物体、给图片加元素时使用。",
   "version": "1.0.0",
   "icon": "🖼️",
-  "category": "image_video",
+  "category": "comfyui",
+  "source": "osprey",
   "runtime_type": "gateway_migrated_api",
   "billing": "token",
   "owner": {

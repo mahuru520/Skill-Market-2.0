@@ -17,6 +17,7 @@ import type {
   Order,
   RuntimeType,
   Billing,
+  Source,
   ChangelogEntry,
 } from "@skill-market/shared";
 
@@ -35,6 +36,7 @@ export class SkillsController {
     @Query("category") category?: string,
     @Query("runtimeType") runtimeType?: RuntimeType,
     @Query("billing") billing?: Billing,
+    @Query("source") source?: Source,
   ): Promise<ApiResponse<Paginated<SkillListItem>>> {
     const data = await this.service.list({
       page: page ? Number(page) : undefined,
@@ -45,6 +47,7 @@ export class SkillsController {
       category,
       runtimeType,
       billing,
+      source,
     });
     return { code: 0, data, message: "ok" };
   }

@@ -6,6 +6,7 @@
   "version": "1.2.0",
   "icon": "📦",
   "category": "system_config",
+  "source": "clawhub",
   "runtime_type": "local",
   "billing": "free",
   "owner": {

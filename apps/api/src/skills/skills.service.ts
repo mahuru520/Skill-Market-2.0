@@ -15,6 +15,7 @@ import type {
   Order,
   RuntimeType,
   Billing,
+  Source,
   ChangelogEntry,
   EnvVar,
   Dependency,
@@ -54,6 +55,7 @@ export class SkillsService {
     category?: string;
     runtimeType?: RuntimeType;
     billing?: Billing;
+    source?: Source;
   }): Promise<Paginated<SkillListItem>> {
     const page = Math.max(1, params.page ?? 1);
     // 上限放开到 500,配合前端「全部技能一页全量展示」(当前 25 个技能)
@@ -66,6 +68,7 @@ export class SkillsService {
     if (params.category) where.category = params.category;
     if (params.runtimeType) where.runtimeType = params.runtimeType;
     if (params.billing) where.billing = params.billing;
+    if (params.source) where.source = params.source;
     if (params.keyword) {
       const kw = params.keyword;
       where.OR = [
@@ -95,7 +98,7 @@ export class SkillsService {
       category: r.category,
       runtimeType: r.runtimeType as RuntimeType,
       billing: r.billing as Billing,
-      source: r.source,
+      source: r.source as Source,
       ownerName: r.ownerName,
       hot: r.hot,
       installCount: r.installCount,
@@ -135,7 +138,7 @@ export class SkillsService {
       icon: r.icon,
       category: r.category,
       runtimeType: r.runtimeType as RuntimeType,
-      source: r.source,
+      source: r.source as Source,
       ownerName: r.ownerName,
       ownerVerified: r.ownerVerified,
       readmePath: r.readmePath,

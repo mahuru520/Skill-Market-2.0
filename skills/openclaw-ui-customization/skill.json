@@ -6,6 +6,7 @@
   "version": "1.0.0",
   "icon": "🎨",
   "category": "system_config",
+  "source": "osprey",
   "runtime_type": "local",
   "owner": {
     "name": "official",

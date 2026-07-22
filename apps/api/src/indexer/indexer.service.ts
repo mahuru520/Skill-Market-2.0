@@ -28,6 +28,7 @@ interface RawSkill {
   icon?: string;
   category: string;
   runtime_type: string;
+  source?: string;
   billing?: string;
   owner?: { name?: string; type?: string; verified?: boolean };
   readme?: string;
@@ -166,7 +167,7 @@ export class IndexerService implements OnModuleInit, OnModuleDestroy {
         icon: raw.icon ?? "",
         category: raw.category ?? "other",
         runtimeType: raw.runtime_type ?? "local",
-        source: raw.owner?.type ?? "official",
+        source: raw.source ?? raw.owner?.type ?? "official",
         ownerName: raw.owner?.name ?? "official",
         ownerVerified: raw.owner?.verified ?? true,
         readmePath,
@@ -196,7 +197,7 @@ export class IndexerService implements OnModuleInit, OnModuleDestroy {
         icon: raw.icon ?? "",
         category: raw.category ?? "other",
         runtimeType: raw.runtime_type ?? "local",
-        source: raw.owner?.type ?? "official",
+        source: raw.source ?? raw.owner?.type ?? "official",
         ownerName: raw.owner?.name ?? "official",
         ownerVerified: raw.owner?.verified ?? true,
         readmePath,
@@ -284,7 +285,11 @@ export class IndexerService implements OnModuleInit, OnModuleDestroy {
     if (explicitBilling === "free" || explicitBilling === "paid") {
       return explicitBilling;
     }
-    if (runtimeType === "gateway_migrated_api" || runtimeType === "external_api")
+    if (
+      runtimeType === "gateway_migrated_api" ||
+      runtimeType === "gateway_async_api" ||
+      runtimeType === "external_api"
+    )
       return "paid";
     return "free";
   }
